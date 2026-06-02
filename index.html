@@ -146,12 +146,17 @@
       <span class="eyebrow" style="color:var(--ink)">Let's team up</span>
       <h2 class="h-sec" style="margin-top:16px">Tell us what <em>you're building.</em></h2>
       <p class="lead" style="color:rgba(21,20,15,.72)">We'll tell you exactly what we'd do — and what it'd cost — free. No pitch, no pressure.</p>
-      <form action="mailto:aiden@thenowdesigns.com" method="post" enctype="text/plain">
-        <div class="form-row"><div class="field"><label>First name</label><input type="text" name="first" required></div><div class="field"><label>Last name</label><input type="text" name="last" required></div></div>
+      <form id="tnd-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="cefe34f9-7266-4558-a8ee-f3a8ad09e6de">
+        <input type="hidden" name="subject" value="New inquiry from thenowdesigns.com">
+        <input type="hidden" name="from_name" value="The Now Designs website">
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none!important">
+        <div class="form-row"><div class="field"><label>First name</label><input type="text" name="First name" required></div><div class="field"><label>Last name</label><input type="text" name="Last name" required></div></div>
         <div class="field"><label>Email</label><input type="email" name="email" required></div>
-        <div class="field"><label>What do you need?</label><input type="text" name="subject" placeholder="New site, rebrand, marketing…" required></div>
-        <div class="field"><label>Tell us more</label><textarea name="message" placeholder="A sentence or two about your project."></textarea></div>
+        <div class="field"><label>What do you need?</label><input type="text" name="What do you need" placeholder="New site, rebrand, marketing…" required></div>
+        <div class="field"><label>Tell us more</label><textarea name="Message" placeholder="A sentence or two about your project."></textarea></div>
         <button type="submit" class="btn btn--cherry">Send it <span class="arrow">→</span></button>
+        <p id="tnd-form-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
     <aside class="contact__aside" data-reveal data-d="2">

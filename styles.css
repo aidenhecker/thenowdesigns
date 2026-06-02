@@ -196,6 +196,9 @@ section{position:relative;}
 .field input,.field textarea{width:100%;font-family:var(--body);font-size:1rem;color:var(--ink);padding:14px 16px;border:1.5px solid var(--line);border-radius:8px;background:rgba(255,255,255,.6);transition:border-color .3s var(--ease),background .3s var(--ease);}
 .field input:focus,.field textarea:focus{outline:none;border-color:var(--cherry);background:#fff;}
 .field textarea{resize:vertical;min-height:130px;}
+.form-status{margin-top:14px;font-size:.98rem;font-weight:600;min-height:1.2em;}
+.form-status.ok{color:#1f6b2e;}
+.form-status.err{color:var(--cherry-deep);}
 .contact__aside{background:var(--ink);color:var(--paper);border-radius:10px;padding:clamp(28px,3vw,40px);position:sticky;top:100px;}
 .contact__aside h3{font-family:var(--display);font-size:1.7rem;margin-bottom:14px;}
 .contact__aside p{color:rgba(247,245,239,.72);font-size:.96rem;margin-bottom:22px;}

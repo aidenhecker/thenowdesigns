@@ -17,4 +17,31 @@
   document.querySelectorAll('[data-reveal]').forEach(function(el){ io.observe(el); });
   var yr = document.getElementById('yr');
   if (yr) yr.textContent = new Date().getFullYear();
+
+  // contact form -> Web3Forms (AJAX, inline status)
+  var form = document.getElementById('tnd-form');
+  if (form) {
+    var status = document.getElementById('tnd-form-status');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (status) { status.textContent = 'Sending…'; status.className = 'form-status'; }
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      })
+      .then(function(r){ return r.json(); })
+      .then(function(j){
+        if (j.success) {
+          form.reset();
+          if (status) { status.textContent = "Thanks — we'll reply today 🍒"; status.className = 'form-status ok'; }
+        } else {
+          if (status) { status.textContent = 'Hmm, that didn’t send. Email us at aiden@thenowdesigns.com'; status.className = 'form-status err'; }
+        }
+      })
+      .catch(function(){
+        if (status) { status.textContent = 'Network error. Email us at aiden@thenowdesigns.com'; status.className = 'form-status err'; }
+      });
+    });
+  }
 })();

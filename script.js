@@ -22,9 +22,23 @@
   var form = document.getElementById('tnd-form');
   if (form) {
     var status = document.getElementById('tnd-form-status');
+    var btn = document.getElementById('tnd-submit');
+    var label = btn ? btn.querySelector('.btn__label') : null;
+    var defaultLabel = label ? label.textContent : 'Send it';
+    var sending = false;
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      if (status) { status.textContent = 'Sending…'; status.className = 'form-status'; }
+      if (sending) return;                       // guard against double-submit
+      sending = true;
+      if (btn) btn.disabled = true;
+      if (label) label.textContent = 'Sending…';
+      if (status) { status.textContent = ''; status.className = 'form-status'; }
+      var done = function(msg, cls){
+        sending = false;
+        if (btn) btn.disabled = false;
+        if (label) label.textContent = defaultLabel;
+        if (status) { status.textContent = msg; status.className = 'form-status ' + cls; }
+      };
       fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
@@ -34,13 +48,13 @@
       .then(function(j){
         if (j.success) {
           form.reset();
-          if (status) { status.textContent = "Thanks — we'll reply today 🍒"; status.className = 'form-status ok'; }
+          done("Thanks — we'll reply today 🍒", 'ok');
         } else {
-          if (status) { status.textContent = 'Hmm, that didn’t send. Email us at aiden@thenowdesigns.com'; status.className = 'form-status err'; }
+          done('Hmm, that didn’t send. Email us at aiden@thenowdesigns.com', 'err');
         }
       })
       .catch(function(){
-        if (status) { status.textContent = 'Network error. Email us at aiden@thenowdesigns.com'; status.className = 'form-status err'; }
+        done('Network error. Email us at aiden@thenowdesigns.com', 'err');
       });
     });
   }

@@ -3,69 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Now Designs — Client Intake & Project Brief</title>
+<title>The Now Designs — Client Intake &amp; Project Brief</title>
+<link rel="icon" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600;1,9..144,900&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#16181d; --muted:#5f6573; --line:#e3e6ec; --bg:#f6f7f9;
-    --brand:#2b59ff; --brand-soft:#eef2ff; --ok:#0b8457; --card:#ffffff;
+    --ink:#15140F; --muted:#5C594F; --line:#e3ddd1; --bg:#F7F5EF;
+    --cherry:#E1452E; --cherry-deep:#C5391F; --cherry-soft:#fbe7e2;
+    --cream:#EFEDE6; --blue:#9FC2EA; --ok:#1f6b2e; --card:#ffffff;
+    --display:'Fraunces',Georgia,serif; --body:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
     --radius:14px;
   }
   *{box-sizing:border-box}
-  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  body{margin:0;font-family:var(--body);
     color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
   .wrap{max-width:880px;margin:0 auto;padding:32px 20px 80px}
-  header.masthead{background:linear-gradient(135deg,#1b2cff 0%,#2b59ff 55%,#5b7bff 100%);
-    color:#fff;border-radius:var(--radius);padding:34px 32px;margin-bottom:26px;
-    box-shadow:0 10px 30px rgba(43,89,255,.18)}
-  header.masthead .logo{font-weight:800;letter-spacing:-.5px;font-size:15px;text-transform:uppercase;opacity:.9}
-  header.masthead h1{margin:8px 0 6px;font-size:30px;letter-spacing:-.6px}
-  header.masthead p{margin:0;opacity:.92;max-width:60ch}
-  .meta{display:flex;gap:24px;flex-wrap:wrap;margin-top:18px;font-size:13px;opacity:.9}
+  header.masthead{background:var(--ink);
+    color:var(--cream);border-radius:var(--radius);padding:34px 32px;margin-bottom:26px;
+    box-shadow:0 16px 40px -18px rgba(21,20,15,.5);position:relative;overflow:hidden}
+  header.masthead::after{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;
+    background:radial-gradient(circle at 30% 30%,var(--cherry),var(--cherry-deep));border-radius:50%;opacity:.18}
+  header.masthead .logo{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.06em;font-size:13px;text-transform:uppercase;opacity:.95}
+  header.masthead .logo svg{width:26px;height:26px}
+  header.masthead h1{margin:12px 0 8px;font-family:var(--display);font-weight:600;font-size:34px;letter-spacing:-.5px;font-style:italic}
+  header.masthead h1 em{color:var(--cherry);font-style:italic}
+  header.masthead p{margin:0;opacity:.86;max-width:62ch;font-size:15px}
+  .meta{display:flex;gap:24px;flex-wrap:wrap;margin-top:18px;font-size:13px;opacity:.9;align-items:center}
   .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-    padding:24px 26px;margin-bottom:18px;box-shadow:0 1px 2px rgba(16,24,40,.04)}
-  .card h2{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--brand);margin:0 0 4px}
-  .card .sub{color:var(--muted);font-size:13px;margin:0 0 18px}
-  .step{display:inline-block;background:var(--brand-soft);color:var(--brand);font-weight:700;
-    font-size:12px;border-radius:999px;padding:2px 10px;margin-bottom:10px}
+    padding:24px 26px;margin-bottom:18px;box-shadow:0 1px 2px rgba(21,20,15,.04)}
+  .card h2{font-family:var(--display);font-style:italic;font-size:22px;color:var(--ink);margin:0 0 4px;letter-spacing:-.3px}
+  .card .sub{color:var(--muted);font-size:13.5px;margin:0 0 18px}
+  .step{display:inline-block;background:var(--cherry-soft);color:var(--cherry-deep);font-weight:800;
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:3px 11px;margin-bottom:10px}
   label{display:block;font-weight:600;font-size:14px;margin:14px 0 6px}
   label .opt{font-weight:400;color:var(--muted)}
   .hint{font-size:12.5px;color:var(--muted);margin:-2px 0 8px}
   input[type=text],input[type=email],input[type=tel],input[type=url],input[type=number],input[type=date],select,textarea{
-    width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:14px;
+    width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;font-size:14px;
     font-family:inherit;color:var(--ink);background:#fff;transition:border .15s,box-shadow .15s}
-  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--cherry);box-shadow:0 0 0 3px var(--cherry-soft)}
   textarea{min-height:90px;resize:vertical}
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
   @media(max-width:620px){.grid2,.grid3{grid-template-columns:1fr}}
   .check{display:flex;align-items:flex-start;gap:9px;margin:7px 0;font-weight:400;font-size:14px}
-  .check input{margin-top:3px;width:16px;height:16px;accent-color:var(--brand)}
+  .check input{margin-top:3px;width:16px;height:16px;accent-color:var(--cherry)}
   fieldset{border:none;padding:0;margin:0}
   .pill-group{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
   @media(max-width:620px){.pill-group{grid-template-columns:1fr}}
-  .pill{border:1px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer;transition:.15s;background:#fff}
-  .pill:hover{border-color:var(--brand)}
-  .pill input{margin-right:8px;accent-color:var(--brand)}
+  .pill{border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer;transition:.15s;background:#fff;display:block}
+  .pill:hover{border-color:var(--cherry)}
+  .pill:has(input:checked){border-color:var(--cherry);background:var(--cherry-soft)}
+  .pill input{margin-right:8px;accent-color:var(--cherry)}
   .pill b{display:block;font-size:14px}
   .pill span{font-size:12.5px;color:var(--muted)}
+  /* color palette swatches */
+  .palettes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0 4px}
+  @media(max-width:620px){.palettes{grid-template-columns:1fr}}
+  .pal{border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;transition:.15s;background:#fff;display:flex;align-items:center;gap:12px}
+  .pal:hover{border-color:var(--cherry)}
+  .pal:has(input:checked){border-color:var(--cherry);background:var(--cherry-soft)}
+  .pal input{accent-color:var(--cherry)}
+  .pal .dots{display:flex;gap:0}
+  .pal .dots i{width:20px;height:20px;border-radius:50%;display:inline-block;margin-left:-6px;border:2px solid #fff;box-shadow:0 1px 2px rgba(0,0,0,.15)}
+  .pal .dots i:first-child{margin-left:0}
+  .pal .pname{font-weight:600;font-size:13.5px}
+  .pal .pdesc{font-size:12px;color:var(--muted)}
+  .color-pickers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+  @media(max-width:620px){.color-pickers{grid-template-columns:1fr 1fr 1fr}}
+  .cp{display:flex;flex-direction:column;align-items:center;gap:6px}
+  .cp label{margin:0;font-size:12.5px;font-weight:600}
+  .cp input[type=color]{-webkit-appearance:none;appearance:none;width:100%;height:48px;border:1.5px solid var(--line);border-radius:10px;padding:0;cursor:pointer;background:#fff}
+  .cp input[type=color]::-webkit-color-swatch-wrapper{padding:4px}
+  .cp input[type=color]::-webkit-color-swatch{border:none;border-radius:6px}
+  .cp .hex{font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+  /* upload dropzone */
+  .dropzone{border:2px dashed var(--line);border-radius:12px;padding:26px 18px;text-align:center;
+    cursor:pointer;transition:.15s;background:var(--cream);color:var(--muted)}
+  .dropzone:hover,.dropzone.drag{border-color:var(--cherry);background:var(--cherry-soft);color:var(--cherry-deep)}
+  .dropzone strong{display:block;color:var(--ink);font-size:15px;margin-bottom:3px}
+  .dropzone .emoji{font-size:26px;display:block;margin-bottom:6px}
+  .previews{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px;margin-top:14px}
+  .thumb{position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .thumb .fname{position:absolute;inset:auto 0 0 0;background:rgba(21,20,15,.78);color:#fff;font-size:10px;padding:3px 5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .thumb .doc{font-size:11px;color:var(--muted);padding:6px;text-align:center;word-break:break-all}
+  .thumb .x{position:absolute;top:4px;right:4px;width:22px;height:22px;border-radius:50%;background:rgba(21,20,15,.82);color:#fff;border:none;cursor:pointer;font-size:13px;line-height:1;display:flex;align-items:center;justify-content:center}
+  .thumb .x:hover{background:var(--cherry)}
   .tier{border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column}
-  .tier h4{margin:0 0 2px;font-size:15px}
-  .tier .price{color:var(--brand);font-weight:800;font-size:18px;margin:2px 0 8px}
-  .tier ul{margin:0 0 10px;padding-left:18px;font-size:12.5px;color:var(--muted)}
-  .tier li{margin:2px 0}
-  .actions{position:sticky;bottom:0;background:rgba(246,247,249,.92);backdrop-filter:blur(6px);
-    border-top:1px solid var(--line);padding:16px 0;margin-top:8px;display:flex;gap:12px;flex-wrap:wrap}
+  .actions{position:sticky;bottom:0;background:rgba(247,245,239,.92);backdrop-filter:blur(6px);
+    border-top:1px solid var(--line);padding:16px 0;margin-top:8px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
   button{font-family:inherit;font-size:15px;font-weight:700;border:none;border-radius:10px;
     padding:13px 22px;cursor:pointer;transition:.15s}
-  .btn-primary{background:var(--brand);color:#fff;box-shadow:0 6px 16px rgba(43,89,255,.25)}
-  .btn-primary:hover{background:#1f49e6}
-  .btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
-  .btn-ghost:hover{border-color:var(--brand);color:var(--brand)}
-  .note{font-size:12px;color:var(--muted);margin-top:10px}
+  .btn-primary{background:var(--cherry);color:#fff;box-shadow:0 10px 26px -10px var(--cherry)}
+  .btn-primary:hover{background:var(--cherry-deep);transform:translateY(-1px)}
+  .btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--cherry);color:var(--cherry-deep)}
+  .note{font-size:12px;color:var(--muted);margin:0;flex:1 1 240px}
   footer{text-align:center;color:var(--muted);font-size:12.5px;margin-top:30px}
-  .req{color:#d6332d}
+  footer a{color:var(--cherry-deep)}
+  .req{color:var(--cherry)}
   @media print{
-    body{background:#fff}.actions{display:none}header.masthead{box-shadow:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    body{background:#fff}.actions,.dropzone,.thumb .x{display:none}
+    header.masthead{box-shadow:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .card{box-shadow:none;break-inside:avoid}
   }
 </style>
@@ -73,12 +113,15 @@
 <body>
 <div class="wrap">
   <header class="masthead">
-    <div class="logo">The Now Designs</div>
-    <h1>Client Intake &amp; Project Brief</h1>
-    <p>The more detail you give us here, the more accurate your custom estimate and the faster we build. There are no wrong answers — if you're unsure, write "not sure" and we'll guide you. Allow about 15–20 minutes.</p>
+    <div class="logo">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M15 9c3-3 9-2 11 1" fill="none" stroke="#7ec46f" stroke-width="2.4" stroke-linecap="round"/><circle cx="11" cy="22" r="6.5" fill="#E1452E"/><circle cx="22" cy="20" r="6" fill="#C5391F"/><circle cx="8.6" cy="19.6" r="1.7" fill="#ff9b88"/></svg>
+      The Now Designs
+    </div>
+    <h1>Client Intake &amp; <em>Project Brief</em></h1>
+    <p>The more detail you give us here, the more accurate your custom estimate — and the faster we build. There are no wrong answers; if you're unsure, write "not sure" and we'll guide you. Allow about 15–20 minutes.</p>
     <div class="meta">
-      <span><strong>Date:</strong> <input type="date" id="f_date" style="width:auto;padding:4px 8px;border-radius:6px;border:none;color:#16181d"></span>
-      <span>All fields marked <span class="req">*</span> are required</span>
+      <span><strong>Date:</strong> <input type="date" id="f_date" style="width:auto;padding:4px 8px;border-radius:6px;border:none;color:#15140F"></span>
+      <span>Fields marked <span class="req">*</span> are required</span>
     </div>
   </header>
 
@@ -142,15 +185,18 @@
   <!-- 4 -->
   <div class="card">
     <span class="step">Step 4</span>
-    <h2>Current Web Presence</h2>
-    <p class="sub">What already exists, if anything.</p>
+    <h2>Current Web Presence &amp; Domain</h2>
+    <p class="sub">What already exists, and the web address you want.</p>
     <div class="grid2">
       <div><label>Existing website URL <span class="opt">(if any)</span></label><input type="url" name="Existing website" placeholder="https://"></div>
       <div><label>Do you own your domain name?</label>
         <select name="Owns domain"><option value="">Select…</option><option>Yes, I have the login</option><option>Yes, but I can't access it</option><option>No, I need one</option><option>Not sure</option></select></div>
     </div>
-    <label>Domain name you want (or already have)</label>
-    <input type="text" name="Desired domain" placeholder="e.g., yourbusiness.com">
+    <label>Domain name you want (or already have) <span class="req">*</span></label>
+    <p class="hint">The web address customers will type. Don't worry if it's taken — we'll help you find the best available option.</p>
+    <input type="text" name="Desired domain" placeholder="e.g., yourbusiness.com" required>
+    <label>Backup domain ideas <span class="opt">(optional)</span></label>
+    <input type="text" name="Backup domains" placeholder="A couple of alternatives in case your first choice is taken">
     <label>What do you like / dislike about your current site?</label>
     <textarea name="Current site likes dislikes"></textarea>
     <label class="check"><input type="checkbox" name="Has existing content"> I have existing content (text, logos, photos) we can reuse</label>
@@ -233,19 +279,50 @@
   <!-- 8 -->
   <div class="card">
     <span class="step">Step 8</span>
-    <h2>Design Direction</h2>
-    <p class="sub">Help us match the look in your head.</p>
+    <h2>Design Direction &amp; Colors</h2>
+    <p class="sub">Help us match the look in your head — and choose your colors.</p>
     <label>3–5 websites you love (and why) <span class="req">*</span></label>
     <p class="hint">Competitors or just sites whose style you like. Paste links.</p>
     <textarea name="Inspiration sites" required></textarea>
     <label>Any sites you dislike? What turns you off?</label>
     <textarea name="Disliked sites"></textarea>
-    <div class="grid2">
-      <div><label>Do you have a logo / brand colors?</label>
-        <select name="Has branding"><option value="">Select…</option><option>Yes, full brand kit</option><option>Logo only</option><option>No — need help</option></select></div>
-      <div><label>Preferred color palette</label><input type="text" name="Colors" placeholder="e.g., navy + warm white, or 'open to ideas'"></div>
+
+    <label style="margin-top:18px">Do you already have a logo / brand kit?</label>
+    <select name="Has branding"><option value="">Select…</option><option>Yes, full brand kit (colors + fonts + logo)</option><option>Logo only</option><option>No — need help creating one</option></select>
+
+    <label style="margin-top:18px">Pick a starting color palette <span class="opt">(or set your own below)</span></label>
+    <div class="palettes">
+      <label class="pal"><input type="radio" name="Palette" value="Bold & energetic (red / charcoal / cream)">
+        <span class="dots"><i style="background:#E1452E"></i><i style="background:#15140F"></i><i style="background:#F7F5EF"></i></span>
+        <span><span class="pname">Bold &amp; energetic</span><span class="pdesc">Red · charcoal · cream</span></span></label>
+      <label class="pal"><input type="radio" name="Palette" value="Calm & trustworthy (navy / sky / white)">
+        <span class="dots"><i style="background:#1b2c5b"></i><i style="background:#9FC2EA"></i><i style="background:#ffffff"></i></span>
+        <span><span class="pname">Calm &amp; trustworthy</span><span class="pdesc">Navy · sky · white</span></span></label>
+      <label class="pal"><input type="radio" name="Palette" value="Warm & earthy (terracotta / sand / olive)">
+        <span class="dots"><i style="background:#b6552f"></i><i style="background:#e7d3b3"></i><i style="background:#6b7045"></i></span>
+        <span><span class="pname">Warm &amp; earthy</span><span class="pdesc">Terracotta · sand · olive</span></span></label>
+      <label class="pal"><input type="radio" name="Palette" value="Elegant & luxe (black / gold / ivory)">
+        <span class="dots"><i style="background:#111"></i><i style="background:#c9a04e"></i><i style="background:#f3efe6"></i></span>
+        <span><span class="pname">Elegant &amp; luxe</span><span class="pdesc">Black · gold · ivory</span></span></label>
+      <label class="pal"><input type="radio" name="Palette" value="Fresh & natural (green / mint / cream)">
+        <span class="dots"><i style="background:#2c5e23"></i><i style="background:#a8d5a2"></i><i style="background:#f6f7ef"></i></span>
+        <span><span class="pname">Fresh &amp; natural</span><span class="pdesc">Green · mint · cream</span></span></label>
+      <label class="pal"><input type="radio" name="Palette" value="Designer's choice — surprise me">
+        <span class="dots"><i style="background:linear-gradient(135deg,#E1452E,#9FC2EA)"></i><i style="background:linear-gradient(135deg,#c9a04e,#2c5e23)"></i><i style="background:linear-gradient(135deg,#15140F,#fff)"></i></span>
+        <span><span class="pname">Surprise me</span><span class="pdesc">Trust the designer</span></span></label>
     </div>
-    <label>Pick the words that describe the vibe you want</label>
+
+    <label style="margin-top:14px">…or pick your exact colors</label>
+    <p class="hint">Tap each swatch to choose. Leave as-is if a palette above is enough.</p>
+    <div class="color-pickers">
+      <div class="cp"><label>Primary</label><input type="color" name="Primary color" value="#E1452E" data-hex><span class="hex">#E1452E</span></div>
+      <div class="cp"><label>Secondary</label><input type="color" name="Secondary color" value="#15140F" data-hex><span class="hex">#15140F</span></div>
+      <div class="cp"><label>Accent</label><input type="color" name="Accent color" value="#9FC2EA" data-hex><span class="hex">#9FC2EA</span></div>
+    </div>
+    <label style="margin-top:14px">Color notes <span class="opt">(optional)</span></label>
+    <input type="text" name="Colors" placeholder="e.g., 'must match our logo', 'no pink', or 'open to ideas'">
+
+    <label style="margin-top:18px">Pick the words that describe the vibe you want</label>
     <div class="grid3">
       <label class="check"><input type="checkbox" name="Style words" value="Modern / minimal"> Modern / minimal</label>
       <label class="check"><input type="checkbox" name="Style words" value="Bold / colorful"> Bold / colorful</label>
@@ -255,7 +332,7 @@
       <label class="check"><input type="checkbox" name="Style words" value="Rustic / handmade"> Rustic / handmade</label>
       <label class="check"><input type="checkbox" name="Style words" value="Tech / futuristic"> Tech / futuristic</label>
       <label class="check"><input type="checkbox" name="Style words" value="Warm / earthy"> Warm / earthy</label>
-      <label class="check"><input type="checkbox" name="Style words" value="Clean / corporate"> Trustworthy / calm</label>
+      <label class="check"><input type="checkbox" name="Style words" value="Trustworthy / calm"> Trustworthy / calm</label>
     </div>
   </div>
 
@@ -264,7 +341,19 @@
     <span class="step">Step 9</span>
     <h2>Content &amp; Assets</h2>
     <p class="sub">Who provides what. Missing content is the #1 cause of delays.</p>
-    <label>Who will write the website text (copy)? <span class="req">*</span></label>
+
+    <label>Upload photos, logos, or examples <span class="opt">(optional, but it speeds things up)</span></label>
+    <p class="hint">Drag in your logo, product/team photos, or screenshots of sites you like. Images, SVG, and PDF welcome.</p>
+    <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Upload files">
+      <span class="emoji">🍒</span>
+      <strong>Drag &amp; drop files here</strong>
+      <span>or click to browse — photos, logo, inspiration</span>
+    </div>
+    <input type="file" id="fileInput" multiple accept="image/*,.pdf,.svg,.heic" hidden>
+    <div class="previews" id="previews"></div>
+    <p class="hint" id="uploadNote" style="display:none"></p>
+
+    <label style="margin-top:18px">Who will write the website text (copy)? <span class="req">*</span></label>
     <fieldset>
       <label class="check"><input type="radio" name="Copywriting" value="Client provides all copy" required> I'll provide all the text</label>
       <label class="check"><input type="radio" name="Copywriting" value="Client provides some, designer helps"> I'll provide some; I need help with the rest</label>
@@ -272,7 +361,7 @@
     </fieldset>
     <label>Photography / images</label>
     <fieldset>
-      <label class="check"><input type="radio" name="Photos" value="Client provides photos"> I have my own photos</label>
+      <label class="check"><input type="radio" name="Photos" value="Client provides photos"> I have my own photos (uploaded above or sent later)</label>
       <label class="check"><input type="radio" name="Photos" value="Use stock photos"> Use professional stock photos</label>
       <label class="check"><input type="radio" name="Photos" value="Need photography (add-on)"> I need photography arranged (add-on)</label>
     </fieldset>
@@ -303,7 +392,7 @@
   <!-- 11 -->
   <div class="card">
     <span class="step">Step 11</span>
-    <h2>Hosting &amp; Domain</h2>
+    <h2>Hosting &amp; Domain Setup</h2>
     <p class="sub">If you chose a one-time build, we hand off files for you to host. On monthly plans we set up and manage hosting through a third-party provider on your behalf.</p>
     <div class="grid2">
       <div><label>For a one-time build, where will you host?</label>
@@ -372,14 +461,14 @@
   </div>
 
   <div class="actions">
-    <button type="button" class="btn-primary" onclick="downloadAnswers()">⬇ Download my answers</button>
+    <button type="button" class="btn-primary" onclick="downloadAnswers()">⬇ Download my brief</button>
     <button type="button" class="btn-ghost" onclick="window.print()">🖨 Print / Save as PDF</button>
-    <p class="note">Tip: click <strong>Download my answers</strong> to save a text file, then email it to us — or print to PDF. (This form doesn't auto-send.)</p>
+    <p class="note">Click <strong>Download my brief</strong> to save your answers, then email them to us along with any photos you uploaded. <em>(This form keeps your files on your device — it doesn't auto-send.)</em></p>
   </div>
   </form>
 
   <footer>
-    The Now Designs · Client Intake &amp; Project Brief · Replace this footer with your contact email, phone, and website.
+    The Now Designs · Client Intake &amp; Project Brief · <a href="https://thenowdesigns.com">thenowdesigns.com</a>
   </footer>
 </div>
 
@@ -387,12 +476,76 @@
   // default date = today
   document.getElementById('f_date').valueAsDate = new Date();
 
+  // live hex labels under each color picker
+  document.querySelectorAll('input[type=color][data-hex]').forEach(function(inp){
+    var span = inp.parentElement.querySelector('.hex');
+    inp.addEventListener('input', function(){ span.textContent = inp.value.toUpperCase(); });
+  });
+
+  // ---- file upload (client-side previews; files stay on device) ----
+  var uploaded = [];           // {name, size}
+  var dz = document.getElementById('dropzone');
+  var fileInput = document.getElementById('fileInput');
+  var previews = document.getElementById('previews');
+  var uploadNote = document.getElementById('uploadNote');
+
+  dz.addEventListener('click', function(){ fileInput.click(); });
+  dz.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); fileInput.click(); } });
+  ['dragover','dragenter'].forEach(function(ev){
+    dz.addEventListener(ev, function(e){ e.preventDefault(); dz.classList.add('drag'); });
+  });
+  ['dragleave','dragend','drop'].forEach(function(ev){
+    dz.addEventListener(ev, function(e){ e.preventDefault(); dz.classList.remove('drag'); });
+  });
+  dz.addEventListener('drop', function(e){ addFiles(e.dataTransfer.files); });
+  fileInput.addEventListener('change', function(){ addFiles(fileInput.files); });
+
+  function fmtSize(b){ return b>1048576 ? (b/1048576).toFixed(1)+' MB' : Math.max(1,Math.round(b/1024))+' KB'; }
+
+  function addFiles(list){
+    Array.prototype.forEach.call(list, function(file){
+      uploaded.push({name:file.name, size:file.size});
+      var card = document.createElement('div');
+      card.className = 'thumb';
+      var x = document.createElement('button');
+      x.type='button'; x.className='x'; x.innerHTML='&times;'; x.title='Remove';
+      var rec = uploaded[uploaded.length-1];
+      x.addEventListener('click', function(){
+        var i = uploaded.indexOf(rec); if(i>-1) uploaded.splice(i,1);
+        card.remove(); renderNote();
+      });
+      if(file.type.indexOf('image/')===0){
+        var img = document.createElement('img');
+        img.src = URL.createObjectURL(file);
+        img.onload = function(){ URL.revokeObjectURL(img.src); };
+        card.appendChild(img);
+        var fn = document.createElement('div'); fn.className='fname'; fn.textContent=file.name;
+        card.appendChild(fn);
+      } else {
+        var doc = document.createElement('div'); doc.className='doc';
+        doc.textContent = '📄 ' + file.name;
+        card.appendChild(doc);
+      }
+      card.appendChild(x);
+      previews.appendChild(card);
+    });
+    renderNote();
+  }
+
+  function renderNote(){
+    if(uploaded.length){
+      uploadNote.style.display='block';
+      uploadNote.innerHTML = '<strong>'+uploaded.length+'</strong> file'+(uploaded.length>1?'s':'')+
+        ' ready. These are listed in your downloaded brief — please <strong>attach the same files to your email</strong> so we receive them.';
+    } else { uploadNote.style.display='none'; }
+  }
+
   function downloadAnswers(){
     const form = document.getElementById('intake');
     const data = {};
     const fd = new FormData(form);
     for (const [k,v] of fd.entries()){
-      if (!v) continue;
+      if (v === '' || v === null) continue;
       if (data[k]) data[k] = [].concat(data[k], v);
       else data[k] = v;
     }
@@ -402,6 +555,11 @@
     for (const k in data){
       const val = Array.isArray(data[k]) ? data[k].join(", ") : data[k];
       out += k + ":\n  " + val + "\n\n";
+    }
+    if (uploaded.length){
+      out += "ATTACHED FILES (please attach these to your email):\n";
+      uploaded.forEach(function(f){ out += "  • " + f.name + " (" + fmtSize(f.size) + ")\n"; });
+      out += "\n";
     }
     const biz = (data['Business name']||'client').toString().replace(/[^a-z0-9]/gi,'-').toLowerCase();
     const blob = new Blob([out], {type:'text/plain'});

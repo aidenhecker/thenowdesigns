@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Now Designs — Client Intake &amp; Project Brief</title>
+<link rel="icon" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600;1,9..144,900&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15140F; --muted:#5C594F; --line:#e3ddd1; --bg:#F7F5EF;
+    --cherry:#E1452E; --cherry-deep:#C5391F; --cherry-soft:#fbe7e2;
+    --cream:#EFEDE6; --blue:#9FC2EA; --ok:#1f6b2e; --card:#ffffff;
+    --display:'Fraunces',Georgia,serif; --body:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--body);
+    color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:880px;margin:0 auto;padding:32px 20px 80px}
+  header.masthead{background:var(--ink);
+    color:var(--cream);border-radius:var(--radius);padding:34px 32px;margin-bottom:26px;
+    box-shadow:0 16px 40px -18px rgba(21,20,15,.5);position:relative;overflow:hidden}
+  header.masthead::after{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;
+    background:radial-gradient(circle at 30% 30%,var(--cherry),var(--cherry-deep));border-radius:50%;opacity:.18}
+  header.masthead .logo{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.06em;font-size:13px;text-transform:uppercase;opacity:.95}
+  header.masthead .logo svg{width:26px;height:26px}
+  header.masthead h1{margin:12px 0 8px;font-family:var(--display);font-weight:600;font-size:34px;letter-spacing:-.5px;font-style:italic}
+  header.masthead h1 em{color:var(--cherry);font-style:italic}
+  header.masthead p{margin:0;opacity:.86;max-width:62ch;font-size:15px}
+  .meta{display:flex;gap:24px;flex-wrap:wrap;margin-top:18px;font-size:13px;opacity:.9;align-items:center}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 26px;margin-bottom:18px;box-shadow:0 1px 2px rgba(21,20,15,.04)}
+  .card h2{font-family:var(--display);font-style:italic;font-size:22px;color:var(--ink);margin:0 0 4px;letter-spacing:-.3px}
+  .card .sub{color:var(--muted);font-size:13.5px;margin:0 0 18px}
+  .step{display:inline-block;background:var(--cherry-soft);color:var(--cherry-deep);font-weight:800;
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:3px 11px;margin-bottom:10px}
+  label{display:block;font-weight:600;font-size:14px;margin:14px 0 6px}
+  label .opt{font-weight:400;color:var(--muted)}
+  .hint{font-size:12.5px;color:var(--muted);margin:-2px 0 8px}
+  input[type=text],input[type=email],input[type=tel],input[type=url],input[type=number],input[type=date],select,textarea{
+    width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;font-size:14px;
+    font-family:inherit;color:var(--ink);background:#fff;transition:border .15s,box-shadow .15s}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--cherry);box-shadow:0 0 0 3px var(--cherry-soft)}
+  textarea{min-height:90px;resize:vertical}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+  @media(max-width:620px){.grid2,.grid3{grid-template-columns:1fr}}
+  .check{display:flex;align-items:flex-start;gap:9px;margin:7px 0;font-weight:400;font-size:14px}
+  .check input{margin-top:3px;width:16px;height:16px;accent-color:var(--cherry)}
+  fieldset{border:none;padding:0;margin:0}
+  .pill-group{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+  @media(max-width:620px){.pill-group{grid-template-columns:1fr}}
+  .pill{border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer;transition:.15s;background:#fff;display:block}
+  .pill:hover{border-color:var(--cherry)}
+  .pill:has(input:checked){border-color:var(--cherry);background:var(--cherry-soft)}
+  .pill input{margin-right:8px;accent-color:var(--cherry)}
+  .pill b{display:block;font-size:14px}
+  .pill span{font-size:12.5px;color:var(--muted)}
+  /* color palette swatches */
+  .palettes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0 4px}
+  @media(max-width:620px){.palettes{grid-template-columns:1fr}}
+  .pal{border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;transition:.15s;background:#fff;display:flex;align-items:center;gap:12px}
+  .pal:hover{border-color:var(--cherry)}
+  .pal:has(input:checked){border-color:var(--cherry);background:var(--cherry-soft)}
+  .pal input{accent-color:var(--cherry)}
+  .pal .dots{display:flex;gap:0}
+  .pal .dots i{width:20px;height:20px;border-radius:50%;display:inline-block;margin-left:-6px;border:2px solid #fff;box-shadow:0 1px 2px rgba(0,0,0,.15)}
+  .pal .dots i:first-child{margin-left:0}
+  .pal .pname{font-weight:600;font-size:13.5px}
+  .pal .pdesc{font-size:12px;color:var(--muted)}
+  .color-pickers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+  @media(max-width:620px){.color-pickers{grid-template-columns:1fr 1fr 1fr}}
+  .cp{display:flex;flex-direction:column;align-items:center;gap:6px}
+  .cp label{margin:0;font-size:12.5px;font-weight:600}
+  .cp input[type=color]{-webkit-appearance:none;appearance:none;width:100%;height:48px;border:1.5px solid var(--line);border-radius:10px;padding:0;cursor:pointer;background:#fff}
+  .cp input[type=color]::-webkit-color-swatch-wrapper{padding:4px}
+  .cp input[type=color]::-webkit-color-swatch{border:none;border-radius:6px}
+  .cp .hex{font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+  /* upload dropzone */
+  .dropzone{border:2px dashed var(--line);border-radius:12px;padding:26px 18px;text-align:center;
+    cursor:pointer;transition:.15s;background:var(--cream);color:var(--muted)}
+  .dropzone:hover,.dropzone.drag{border-color:var(--cherry);background:var(--cherry-soft);color:var(--cherry-deep)}
+  .dropzone strong{display:block;color:var(--ink);font-size:15px;margin-bottom:3px}
+  .dropzone .emoji{font-size:26px;display:block;margin-bottom:6px}
+  .previews{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px;margin-top:14px}
+  .thumb{position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .thumb .fname{position:absolute;inset:auto 0 0 0;background:rgba(21,20,15,.78);color:#fff;font-size:10px;padding:3px 5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .thumb .doc{font-size:11px;color:var(--muted);padding:6px;text-align:center;word-break:break-all}
+  .thumb .x{position:absolute;top:4px;right:4px;width:22px;height:22px;border-radius:50%;background:rgba(21,20,15,.82);color:#fff;border:none;cursor:pointer;font-size:13px;line-height:1;display:flex;align-items:center;justify-content:center}
+  .thumb .x:hover{background:var(--cherry)}
+  .tier{border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column}
+  .actions{position:sticky;bottom:0;background:rgba(247,245,239,.92);backdrop-filter:blur(6px);
+    border-top:1px solid var(--line);padding:16px 0;margin-top:8px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  button{font-family:inherit;font-size:15px;font-weight:700;border:none;border-radius:10px;
+    padding:13px 22px;cursor:pointer;transition:.15s}
+  .btn-primary{background:var(--cherry);color:#fff;box-shadow:0 10px 26px -10px var(--cherry)}
+  .btn-primary:hover{background:var(--cherry-deep);transform:translateY(-1px)}
+  .btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--cherry);color:var(--cherry-deep)}
+  .note{font-size:12px;color:var(--muted);margin:0;flex:1 1 240px}
+  footer{text-align:center;color:var(--muted);font-size:12.5px;margin-top:30px}
+  footer a{color:var(--cherry-deep)}
+  .req{color:var(--cherry)}
+  @media print{
+    body{background:#fff}.actions,.dropzone,.thumb .x{display:none}
+    header.masthead{box-shadow:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .card{box-shadow:none;break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <div class="logo">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M15 9c3-3 9-2 11 1" fill="none" stroke="#7ec46f" stroke-width="2.4" stroke-linecap="round"/><circle cx="11" cy="22" r="6.5" fill="#E1452E"/><circle cx="22" cy="20" r="6" fill="#C5391F"/><circle cx="8.6" cy="19.6" r="1.7" fill="#ff9b88"/></svg>
+      The Now Designs
+    </div>
+    <h1>Client Intake &amp; <em>Project Brief</em></h1>
+    <p>The more detail you give us here, the more accurate your custom estimate — and the faster we build. There are no wrong answers; if you're unsure, write "not sure" and we'll guide you. Allow about 15–20 minutes.</p>
+    <div class="meta">
+      <span><strong>Date:</strong> <input type="date" id="f_date" style="width:auto;padding:4px 8px;border-radius:6px;border:none;color:#15140F"></span>
+      <span>Fields marked <span class="req">*</span> are required</span>
+      <span style="font-size:12.5px"><a href="/formulario/" style="color:var(--cream);opacity:.8;text-decoration:underline">Versión en español →</a></span>
+    </div>
+  </header>
+
+  <form id="intake">
+
+  <!-- Web3Forms delivery -->
+  <input type="hidden" name="access_key" value="cefe34f9-7266-4558-a8ee-f3a8ad09e6de">
+  <input type="hidden" name="subject" value="New custom design brief — The Now Designs">
+  <input type="hidden" name="from_name" value="The Now Designs intake form">
+  <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none!important">
+
+  <!-- 1 -->
+  <div class="card">
+    <span class="step">Step 1</span>
+    <h2>Contact &amp; Business</h2>
+    <p class="sub">Who we'll be working with and where to send things.</p>
+    <div class="grid2">
+      <div><label>Your full name <span class="req">*</span></label><input type="text" name="Full name" required></div>
+      <div><label>Role / title <span class="opt">(optional)</span></label><input type="text" name="Role"></div>
+      <div><label>Business / organization name <span class="req">*</span></label><input type="text" name="Business name" required></div>
+      <div><label>Business phone <span class="req">*</span></label><input type="tel" name="Phone" required></div>
+      <div><label>Email <span class="req">*</span></label><input type="email" name="Email" required></div>
+      <div><label>Best way / time to reach you</label><input type="text" name="Best contact method"></div>
+      <div><label>Business mailing address</label><input type="text" name="Address"></div>
+      <div><label>Business location(s) served</label><input type="text" name="Service area"></div>
+    </div>
+    <label>What does your business do, in one or two sentences? <span class="req">*</span></label>
+    <textarea name="What the business does" required></textarea>
+    <label>How long have you been in business? <span class="opt">(optional)</span></label>
+    <input type="text" name="Years in business">
+  </div>
+
+  <!-- 2 -->
+  <div class="card">
+    <span class="step">Step 2</span>
+    <h2>Project Goals</h2>
+    <p class="sub">What success looks like. This drives every decision we make.</p>
+    <label>Why are you building / rebuilding this website now? <span class="req">*</span></label>
+    <textarea name="Why now" required></textarea>
+    <label>What are the top 3 things you want this site to accomplish? <span class="req">*</span></label>
+    <p class="hint">e.g., get phone calls, take bookings, sell products, look credible, collect leads.</p>
+    <input type="text" name="Goal 1" placeholder="Goal 1" style="margin-bottom:8px">
+    <input type="text" name="Goal 2" placeholder="Goal 2" style="margin-bottom:8px">
+    <input type="text" name="Goal 3" placeholder="Goal 3">
+    <label>What is the single most important action a visitor should take?</label>
+    <p class="hint">This becomes the main call-to-action across the site.</p>
+    <input type="text" name="Primary call to action" placeholder="e.g., Call us, Book a consult, Buy now, Request a quote">
+    <label>How will you know the site is working? <span class="opt">(optional)</span></label>
+    <input type="text" name="Success metric" placeholder="e.g., 10 leads/month, online orders, fewer phone questions">
+  </div>
+
+  <!-- 3 -->
+  <div class="card">
+    <span class="step">Step 3</span>
+    <h2>Audience</h2>
+    <p class="sub">Who the site is really for.</p>
+    <label>Describe your ideal customer / visitor <span class="req">*</span></label>
+    <textarea name="Target audience" required placeholder="Age, location, what they care about, what problem they're trying to solve"></textarea>
+    <div class="grid2">
+      <div><label>Roughly what share of visitors are on mobile?</label>
+        <select name="Mobile share"><option value="">Select…</option><option>Mostly mobile</option><option>About half and half</option><option>Mostly desktop</option><option>Not sure</option></select></div>
+      <div><label>Do you need languages other than English?</label>
+        <input type="text" name="Languages" placeholder="e.g., English only, or English + Spanish"></div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="card">
+    <span class="step">Step 4</span>
+    <h2>Current Web Presence &amp; Domain</h2>
+    <p class="sub">What already exists, and the web address you want.</p>
+    <div class="grid2">
+      <div><label>Existing website URL <span class="opt">(if any)</span></label><input type="url" name="Existing website" placeholder="https://"></div>
+      <div><label>Do you own your domain name?</label>
+        <select name="Owns domain"><option value="">Select…</option><option>Yes, I have the login</option><option>Yes, but I can't access it</option><option>No, I need one</option><option>Not sure</option></select></div>
+    </div>
+    <label>Domain name you want (or already have) <span class="req">*</span></label>
+    <p class="hint">The web address customers will type. Don't worry if it's taken — we'll help you find the best available option.</p>
+    <input type="text" name="Desired domain" placeholder="e.g., yourbusiness.com" required>
+    <label>Backup domain ideas <span class="opt">(optional)</span></label>
+    <input type="text" name="Backup domains" placeholder="A couple of alternatives in case your first choice is taken">
+    <label>What do you like / dislike about your current site?</label>
+    <textarea name="Current site likes dislikes"></textarea>
+    <label class="check"><input type="checkbox" name="Has existing content"> I have existing content (text, logos, photos) we can reuse</label>
+    <label>Social media / online profiles <span class="opt">(optional)</span></label>
+    <input type="text" name="Social profiles" placeholder="Instagram, Facebook, Google Business, LinkedIn, etc.">
+  </div>
+
+  <!-- 5 -->
+  <div class="card">
+    <span class="step">Step 5</span>
+    <h2>Plan Selection</h2>
+    <p class="sub">Choose how you'd like to work with us. Not sure? Pick "Help me decide" and we'll recommend one with your estimate.</p>
+    <fieldset>
+      <label class="pill"><input type="radio" name="Engagement model" value="Full custom build ($1,999 one-time + $50/mo hosting)"><b>Full custom website — $1,999 one-time + $50/mo hosting</b><span>We design &amp; build a fully custom site that's yours to keep — own the code, domain &amp; data. $50/mo (invoiced separately) covers hosting, security (HTTPS + Cloudflare DNS) &amp; updates.</span></label>
+      <label class="pill"><input type="radio" name="Engagement model" value="Monthly managed ($99/mo)"><b>Monthly managed plan — $99/mo</b><span>We build, host, maintain, and support your site for one monthly fee. No big upfront, month-to-month, you never touch code.</span></label>
+      <label class="pill"><input type="radio" name="Engagement model" value="Help me decide"><b>Help me decide</b><span>Recommend the best fit based on my answers.</span></label>
+    </fieldset>
+
+    <label style="margin-top:18px">Want to add SEO &amp; advertising? <span class="opt">(optional)</span></label>
+    <p class="hint">Ongoing local SEO, content, and ad management with a monthly report. Can be added to either plan.</p>
+    <fieldset>
+      <label class="pill"><input type="radio" name="SEO add-on" value="Yes — add SEO &amp; Advertising ($500/mo)"><b>Yes — add SEO &amp; Advertising ($500/mo)</b><span>Bring the traffic: local SEO, search-data content, and ad campaign management.</span></label>
+      <label class="pill"><input type="radio" name="SEO add-on" value="Not now"><b>Not right now</b><span>Just the website for now — we can add it later.</span></label>
+    </fieldset>
+  </div>
+
+  <!-- 6 -->
+  <div class="card">
+    <span class="step">Step 6</span>
+    <h2>Pages &amp; Structure</h2>
+    <p class="sub">Roughly how big is the site? Check the pages you need.</p>
+    <div class="grid2">
+      <label class="check"><input type="checkbox" name="Pages" value="Home"> Home</label>
+      <label class="check"><input type="checkbox" name="Pages" value="About"> About</label>
+      <label class="check"><input type="checkbox" name="Pages" value="Services / Products"> Services / Products</label>
+      <label class="check"><input type="checkbox" name="Pages" value="Service detail pages"> Individual service / product pages</label>
+      <label class="check"><input type="checkbox" name="Pages" value="Contact"> Contact</label>
+      <label class="check"><input type="checkbox" name="Pages" value="Gallery / Portfolio"> Gallery / Portfolio</label>
+      <label class="check"><input type="checkbox" name="Pages" value="Testimonials / Reviews"> Testimonials / Reviews</label>
+      <label class="check"><input type="checkbox" name="Pages" value="Blog / News"> Blog / News</label>
+      <label class="check"><input type="checkbox" name="Pages" value="FAQ"> FAQ</label>
+      <label class="check"><input type="checkbox" name="Pages" value="Pricing"> Pricing</label>
+      <label class="check"><input type="checkbox" name="Pages" value="Booking / Scheduling"> Booking / Scheduling</label>
+      <label class="check"><input type="checkbox" name="Pages" value="Online store"> Online store / Shop</label>
+      <label class="check"><input type="checkbox" name="Pages" value="Account / Login"> Customer login / Account area</label>
+      <label class="check"><input type="checkbox" name="Pages" value="Privacy & Terms"> Privacy Policy &amp; Terms</label>
+    </div>
+    <label>Other pages you need, or a rough page count</label>
+    <input type="text" name="Other pages">
+    <label>If you have a sitemap or page list, paste it here</label>
+    <textarea name="Sitemap notes"></textarea>
+  </div>
+
+  <!-- 7 -->
+  <div class="card">
+    <span class="step">Step 7</span>
+    <h2>Features &amp; Functionality</h2>
+    <p class="sub">Check anything the site needs to <em>do</em>. These drive the estimate most.</p>
+    <div class="grid2">
+      <label class="check"><input type="checkbox" name="Features" value="Contact form"> Contact / lead form</label>
+      <label class="check"><input type="checkbox" name="Features" value="Newsletter signup"> Newsletter signup</label>
+      <label class="check"><input type="checkbox" name="Features" value="Online booking / appointments"> Online booking / appointments</label>
+      <label class="check"><input type="checkbox" name="Features" value="E-commerce / payments"> Sell products / take payments</label>
+      <label class="check"><input type="checkbox" name="Features" value="Subscriptions / memberships"> Subscriptions / memberships</label>
+      <label class="check"><input type="checkbox" name="Features" value="Blog / CMS"> Blog or content I can edit myself</label>
+      <label class="check"><input type="checkbox" name="Features" value="Photo / video gallery"> Photo / video gallery</label>
+      <label class="check"><input type="checkbox" name="Features" value="Maps / location"> Maps / store locator</label>
+      <label class="check"><input type="checkbox" name="Features" value="Live chat"> Live chat / chatbot</label>
+      <label class="check"><input type="checkbox" name="Features" value="Search"> On-site search</label>
+      <label class="check"><input type="checkbox" name="Features" value="Multi-language"> Multiple languages</label>
+      <label class="check"><input type="checkbox" name="Features" value="Customer accounts"> Customer accounts / logins</label>
+      <label class="check"><input type="checkbox" name="Features" value="Reviews / ratings"> Reviews / ratings</label>
+      <label class="check"><input type="checkbox" name="Features" value="Animations / interactive"> Custom animations / interactive elements</label>
+    </div>
+    <label>Describe any custom or unusual functionality in detail</label>
+    <p class="hint">The more specific you are, the tighter your estimate.</p>
+    <textarea name="Custom functionality"></textarea>
+  </div>
+
+  <!-- 8 -->
+  <div class="card">
+    <span class="step">Step 8</span>
+    <h2>Design Direction &amp; Colors</h2>
+    <p class="sub">Help us match the look in your head — and choose your colors.</p>
+    <label>3–5 websites you love (and why) <span class="req">*</span></label>
+    <p class="hint">Competitors or just sites whose style you like. Paste links.</p>
+    <textarea name="Inspiration sites" required></textarea>
+    <label>Any sites you dislike? What turns you off?</label>
+    <textarea name="Disliked sites"></textarea>
+
+    <label style="margin-top:18px">Do you already have a logo / brand kit?</label>
+    <select name="Has branding"><option value="">Select…</option><option>Yes, full brand kit (colors + fonts + logo)</option><option>Logo only</option><option>No — need help creating one</option></select>
+
+    <label style="margin-top:18px">Pick a starting color palette <span class="opt">(or set your own below)</span></label>
+    <div class="palettes">
+      <label class="pal"><input type="radio" name="Palette" value="Bold & energetic (red / charcoal / cream)">
+        <span class="dots"><i style="background:#E1452E"></i><i style="background:#15140F"></i><i style="background:#F7F5EF"></i></span>
+        <span><span class="pname">Bold &amp; energetic</span><span class="pdesc">Red · charcoal · cream</span></span></label>
+      <label class="pal"><input type="radio" name="Palette" value="Calm & trustworthy (navy / sky / white)">
+        <span class="dots"><i style="background:#1b2c5b"></i><i style="background:#9FC2EA"></i><i style="background:#ffffff"></i></span>
+        <span><span class="pname">Calm &amp; trustworthy</span><span class="pdesc">Navy · sky · white</span></span></label>
+      <label class="pal"><input type="radio" name="Palette" value="Warm & earthy (terracotta / sand / olive)">
+        <span class="dots"><i style="background:#b6552f"></i><i style="background:#e7d3b3"></i><i style="background:#6b7045"></i></span>
+        <span><span class="pname">Warm &amp; earthy</span><span class="pdesc">Terracotta · sand · olive</span></span></label>
+      <label class="pal"><input type="radio" name="Palette" value="Elegant & luxe (black / gold / ivory)">
+        <span class="dots"><i style="background:#111"></i><i style="background:#c9a04e"></i><i style="background:#f3efe6"></i></span>
+        <span><span class="pname">Elegant &amp; luxe</span><span class="pdesc">Black · gold · ivory</span></span></label>
+      <label class="pal"><input type="radio" name="Palette" value="Fresh & natural (green / mint / cream)">
+        <span class="dots"><i style="background:#2c5e23"></i><i style="background:#a8d5a2"></i><i style="background:#f6f7ef"></i></span>
+        <span><span class="pname">Fresh &amp; natural</span><span class="pdesc">Green · mint · cream</span></span></label>
+      <label class="pal"><input type="radio" name="Palette" value="Designer's choice — surprise me">
+        <span class="dots"><i style="background:linear-gradient(135deg,#E1452E,#9FC2EA)"></i><i style="background:linear-gradient(135deg,#c9a04e,#2c5e23)"></i><i style="background:linear-gradient(135deg,#15140F,#fff)"></i></span>
+        <span><span class="pname">Surprise me</span><span class="pdesc">Trust the designer</span></span></label>
+    </div>
+
+    <label style="margin-top:14px">…or pick your exact colors</label>
+    <p class="hint">Tap each swatch to choose. Leave as-is if a palette above is enough.</p>
+    <div class="color-pickers">
+      <div class="cp"><label>Primary</label><input type="color" name="Primary color" value="#E1452E" data-hex><span class="hex">#E1452E</span></div>
+      <div class="cp"><label>Secondary</label><input type="color" name="Secondary color" value="#15140F" data-hex><span class="hex">#15140F</span></div>
+      <div class="cp"><label>Accent</label><input type="color" name="Accent color" value="#9FC2EA" data-hex><span class="hex">#9FC2EA</span></div>
+    </div>
+    <label style="margin-top:14px">Color notes <span class="opt">(optional)</span></label>
+    <input type="text" name="Colors" placeholder="e.g., 'must match our logo', 'no pink', or 'open to ideas'">
+
+    <label style="margin-top:18px">Pick the words that describe the vibe you want</label>
+    <div class="grid3">
+      <label class="check"><input type="checkbox" name="Style words" value="Modern / minimal"> Modern / minimal</label>
+      <label class="check"><input type="checkbox" name="Style words" value="Bold / colorful"> Bold / colorful</label>
+      <label class="check"><input type="checkbox" name="Style words" value="Elegant / luxury"> Elegant / luxury</label>
+      <label class="check"><input type="checkbox" name="Style words" value="Friendly / playful"> Friendly / playful</label>
+      <label class="check"><input type="checkbox" name="Style words" value="Corporate / professional"> Corporate / professional</label>
+      <label class="check"><input type="checkbox" name="Style words" value="Rustic / handmade"> Rustic / handmade</label>
+      <label class="check"><input type="checkbox" name="Style words" value="Tech / futuristic"> Tech / futuristic</label>
+      <label class="check"><input type="checkbox" name="Style words" value="Warm / earthy"> Warm / earthy</label>
+      <label class="check"><input type="checkbox" name="Style words" value="Trustworthy / calm"> Trustworthy / calm</label>
+    </div>
+  </div>
+
+  <!-- 9 -->
+  <div class="card">
+    <span class="step">Step 9</span>
+    <h2>Content &amp; Assets</h2>
+    <p class="sub">Who provides what. Missing content is the #1 cause of delays.</p>
+
+    <label>Gather your photos, logo, or examples <span class="opt">(optional, but it speeds things up)</span></label>
+    <p class="hint">Pick the files you want to send — your logo, product/team photos, or screenshots of sites you like. After you submit, we'll show you where to email these same files so we get the full-resolution originals.</p>
+    <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose files">
+      <span class="emoji">🍒</span>
+      <strong>Tap to choose your files</strong>
+      <span>photos, logo, inspiration — drag &amp; drop works too</span>
+    </div>
+    <input type="file" id="fileInput" multiple accept="image/*,.pdf,.svg,.heic" hidden>
+    <div class="previews" id="previews"></div>
+    <p class="hint" id="uploadNote" style="display:none"></p>
+
+    <label style="margin-top:18px">Who will write the website text (copy)? <span class="req">*</span></label>
+    <fieldset>
+      <label class="check"><input type="radio" name="Copywriting" value="Client provides all copy" required> I'll provide all the text</label>
+      <label class="check"><input type="radio" name="Copywriting" value="Client provides some, designer helps"> I'll provide some; I need help with the rest</label>
+      <label class="check"><input type="radio" name="Copywriting" value="Designer writes copy (add-on)"> Please write it for me (add-on service)</label>
+    </fieldset>
+    <label>Photography / images</label>
+    <fieldset>
+      <label class="check"><input type="radio" name="Photos" value="Client provides photos"> I have my own photos (uploaded above or sent later)</label>
+      <label class="check"><input type="radio" name="Photos" value="Use stock photos"> Use professional stock photos</label>
+      <label class="check"><input type="radio" name="Photos" value="Need photography (add-on)"> I need photography arranged (add-on)</label>
+    </fieldset>
+    <label class="check" style="margin-top:8px"><input type="checkbox" name="Has logo files"> I have my logo in a high-resolution / vector format</label>
+    <label>Anything else we should know about your content (videos, documents, menus, price lists)?</label>
+    <textarea name="Content notes"></textarea>
+  </div>
+
+  <!-- 10 -->
+  <div class="card">
+    <span class="step">Step 10</span>
+    <h2>Integrations &amp; Tech</h2>
+    <p class="sub">Tools the site needs to connect to.</p>
+    <div class="grid2">
+      <label class="check"><input type="checkbox" name="Integrations" value="Payment processor (Stripe/PayPal/Square)"> Payments (Stripe / PayPal / Square)</label>
+      <label class="check"><input type="checkbox" name="Integrations" value="Email marketing (Mailchimp etc.)"> Email marketing (Mailchimp, etc.)</label>
+      <label class="check"><input type="checkbox" name="Integrations" value="CRM"> CRM</label>
+      <label class="check"><input type="checkbox" name="Integrations" value="Booking/scheduling tool"> Booking tool (Calendly, etc.)</label>
+      <label class="check"><input type="checkbox" name="Integrations" value="Social media feeds"> Social media feeds</label>
+      <label class="check"><input type="checkbox" name="Integrations" value="Google Analytics"> Analytics / tracking</label>
+      <label class="check"><input type="checkbox" name="Integrations" value="POS / inventory"> POS / inventory system</label>
+      <label class="check"><input type="checkbox" name="Integrations" value="Accounting (QuickBooks etc.)"> Accounting (QuickBooks, etc.)</label>
+    </div>
+    <label>Other tools / software to integrate</label>
+    <input type="text" name="Other integrations">
+  </div>
+
+  <!-- 11 -->
+  <div class="card">
+    <span class="step">Step 11</span>
+    <h2>Hosting &amp; Domain Setup</h2>
+    <p class="sub">If you chose a one-time build, we hand off files for you to host. On monthly plans we set up and manage hosting through a third-party provider on your behalf.</p>
+    <div class="grid2">
+      <div><label>For a one-time build, where will you host?</label>
+        <select name="Self-host plan"><option value="">Select…</option><option>I have a host already</option><option>I'll need a recommendation</option><option>N/A — I want a managed monthly plan</option></select></div>
+      <div><label>Do you have business email set up?</label>
+        <select name="Business email"><option value="">Select…</option><option>Yes</option><option>No, I'd like help</option><option>Not sure</option></select></div>
+    </div>
+    <label class="check"><input type="checkbox" name="Needs domain help"> I need help registering or transferring my domain</label>
+  </div>
+
+  <!-- 12 -->
+  <div class="card">
+    <span class="step">Step 12</span>
+    <h2>SEO &amp; Marketing <span class="opt" style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted)">(optional add-ons)</span></h2>
+    <p class="sub">Only if you want to be found and grow. Skip if not relevant.</p>
+    <div class="grid2">
+      <label class="check"><input type="checkbox" name="Marketing" value="Local SEO / Google Business"> Local SEO &amp; Google Business setup</label>
+      <label class="check"><input type="checkbox" name="Marketing" value="Keyword/on-page SEO"> On-page SEO (keywords, structure)</label>
+      <label class="check"><input type="checkbox" name="Marketing" value="Ongoing content/blog"> Ongoing blog / content</label>
+      <label class="check"><input type="checkbox" name="Marketing" value="Email campaigns"> Email campaigns / newsletters</label>
+      <label class="check"><input type="checkbox" name="Marketing" value="Social media"> Social media management</label>
+      <label class="check"><input type="checkbox" name="Marketing" value="Paid ads"> Paid ads (Google / Meta)</label>
+    </div>
+    <label>What keywords or searches should your customers use to find you?</label>
+    <input type="text" name="Target keywords" placeholder="e.g., 'Tacoma roof repair', 'wedding photographer Seattle'">
+  </div>
+
+  <!-- 13 -->
+  <div class="card">
+    <span class="step">Step 13</span>
+    <h2>Timeline &amp; Budget</h2>
+    <p class="sub">Honest answers here help us scope realistically — no judgment.</p>
+    <div class="grid2">
+      <div><label>When do you want to launch? <span class="req">*</span></label>
+        <select name="Timeline" required><option value="">Select…</option><option>ASAP</option><option>Within 1 month</option><option>1–3 months</option><option>3–6 months</option><option>Flexible</option></select></div>
+      <div><label>Any hard deadline or event?</label><input type="text" name="Hard deadline" placeholder="e.g., grand opening Aug 1"></div>
+    </div>
+    <label>Budget range for the build <span class="req">*</span></label>
+    <p class="hint">A range is fine. This lets us recommend the right scope instead of guessing.</p>
+    <select name="Budget" required>
+      <option value="">Select…</option>
+      <option>Under $1,000</option>
+      <option>$1,000 – $2,500</option>
+      <option>$2,500 – $5,000</option>
+      <option>$5,000 – $10,000</option>
+      <option>$10,000+</option>
+      <option>Not sure — advise me</option>
+    </select>
+    <label>Monthly budget for hosting / maintenance / marketing (if applicable)</label>
+    <select name="Monthly budget">
+      <option value="">Select…</option>
+      <option>Up to $50/mo</option><option>$50–$150/mo</option><option>$150–$300/mo</option><option>$300+/mo</option><option>N/A</option>
+    </select>
+  </div>
+
+  <!-- 14 -->
+  <div class="card">
+    <span class="step">Step 14</span>
+    <h2>Anything Else</h2>
+    <p class="sub">The stuff that doesn't fit a box.</p>
+    <label>Anything we didn't ask that we should know?</label>
+    <textarea name="Additional notes"></textarea>
+    <label>How did you hear about The Now Designs?</label>
+    <input type="text" name="Referral source">
+    <label class="check" style="margin-top:14px"><input type="checkbox" name="Estimate acknowledgment" required> <span>I understand this brief is used to prepare a custom, no-obligation estimate, and that final scope, pricing, and timeline will be confirmed in a written proposal and services agreement before any work begins. <span class="req">*</span></span></label>
+  </div>
+
+  <div class="actions">
+    <button type="submit" class="btn-primary" id="submitBtn">Send my brief <span aria-hidden="true">→</span></button>
+    <button type="button" class="btn-ghost" onclick="downloadAnswers()">⬇ Download a copy</button>
+    <button type="button" class="btn-ghost" onclick="window.print()">🖨 Print / PDF</button>
+    <p class="note" id="formNote">Click <strong>Send my brief</strong> and your answers come straight to us. We'll reply the same day with your custom estimate.</p>
+  </div>
+  </form>
+
+  <footer>
+    The Now Designs · Client Intake &amp; Project Brief · <a href="https://thenowdesigns.com">thenowdesigns.com</a>
+  </footer>
+</div>
+
+<script>
+  // default date = today
+  document.getElementById('f_date').valueAsDate = new Date();
+
+  // live hex labels under each color picker
+  document.querySelectorAll('input[type=color][data-hex]').forEach(function(inp){
+    var span = inp.parentElement.querySelector('.hex');
+    inp.addEventListener('input', function(){ span.textContent = inp.value.toUpperCase(); });
+  });
+
+  // ---- submit the brief to us via Web3Forms (text answers; photos are emailed separately) ----
+  var intakeForm = document.getElementById('intake');
+  intakeForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('submitBtn');
+    var note = document.getElementById('formNote');
+    var original = btn.innerHTML;
+    btn.disabled = true; btn.innerHTML = 'Sending…';
+    note.textContent = '';
+
+    var fd = new FormData(intakeForm);
+    fd.set('Date', document.getElementById('f_date').value || '');
+    // file uploads aren't transmitted (no name on the picker) — list the chosen files so we know what to expect
+    if (uploaded.length){
+      fd.append('Photos to be emailed separately', uploaded.map(function(f){ return f.name; }).join(', '));
+    }
+
+    fetch('https://api.web3forms.com/submit', { method:'POST', body: fd })
+      .then(function(r){ return r.json(); })
+      .then(function(json){
+        if (json.success){ showSuccess(); }
+        else { throw new Error(json.message || 'Submission failed'); }
+      })
+      .catch(function(){
+        btn.disabled = false; btn.innerHTML = original;
+        note.innerHTML = '⚠️ Something went wrong sending your brief. Please use <strong>Download a copy</strong> and email it to ' +
+          '<a href="mailto:aiden@thenowdesigns.com">aiden@thenowdesigns.com</a>, or try again.';
+      });
+  });
+
+  function showSuccess(){
+    intakeForm.style.display = 'none';
+    var files = uploaded.length
+      ? ' (the ' + uploaded.length + ' file' + (uploaded.length>1?'s':'') + ' you selected: ' + uploaded.map(function(f){return f.name;}).join(', ') + ')'
+      : '';
+    var card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML =
+      '<span class="step">Done</span>' +
+      '<h2>Thank you — your brief is on its way 🍒</h2>' +
+      '<p class="sub">We\'ve received your answers and will reply the same day with your custom estimate.</p>' +
+      '<p style="font-size:14.5px"><strong>One last step — your photos &amp; logo.</strong> Email them' + files +
+      ' to <a href="mailto:aiden@thenowdesigns.com?subject=My%20photos%20%26%20logo" style="color:var(--cherry-deep);font-weight:600">aiden@thenowdesigns.com</a>' +
+      ' (or text them to us) and we\'ll get started right away.</p>';
+    intakeForm.parentNode.insertBefore(card, intakeForm.nextSibling);
+    window.scrollTo({ top:0, behavior:'smooth' });
+  }
+
+  // ---- file upload (client-side previews; files stay on device) ----
+  var uploaded = [];           // {name, size}
+  var dz = document.getElementById('dropzone');
+  var fileInput = document.getElementById('fileInput');
+  var previews = document.getElementById('previews');
+  var uploadNote = document.getElementById('uploadNote');
+
+  dz.addEventListener('click', function(){ fileInput.click(); });
+  dz.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); fileInput.click(); } });
+  ['dragover','dragenter'].forEach(function(ev){
+    dz.addEventListener(ev, function(e){ e.preventDefault(); dz.classList.add('drag'); });
+  });
+  ['dragleave','dragend','drop'].forEach(function(ev){
+    dz.addEventListener(ev, function(e){ e.preventDefault(); dz.classList.remove('drag'); });
+  });
+  dz.addEventListener('drop', function(e){ addFiles(e.dataTransfer.files); });
+  fileInput.addEventListener('change', function(){ addFiles(fileInput.files); });
+
+  function fmtSize(b){ return b>1048576 ? (b/1048576).toFixed(1)+' MB' : Math.max(1,Math.round(b/1024))+' KB'; }
+
+  function addFiles(list){
+    Array.prototype.forEach.call(list, function(file){
+      uploaded.push({name:file.name, size:file.size});
+      var card = document.createElement('div');
+      card.className = 'thumb';
+      var x = document.createElement('button');
+      x.type='button'; x.className='x'; x.innerHTML='&times;'; x.title='Remove';
+      var rec = uploaded[uploaded.length-1];
+      x.addEventListener('click', function(){
+        var i = uploaded.indexOf(rec); if(i>-1) uploaded.splice(i,1);
+        card.remove(); renderNote();
+      });
+      if(file.type.indexOf('image/')===0){
+        var img = document.createElement('img');
+        img.src = URL.createObjectURL(file);
+        img.onload = function(){ URL.revokeObjectURL(img.src); };
+        card.appendChild(img);
+        var fn = document.createElement('div'); fn.className='fname'; fn.textContent=file.name;
+        card.appendChild(fn);
+      } else {
+        var doc = document.createElement('div'); doc.className='doc';
+        doc.textContent = '📄 ' + file.name;
+        card.appendChild(doc);
+      }
+      card.appendChild(x);
+      previews.appendChild(card);
+    });
+    renderNote();
+  }
+
+  function renderNote(){
+    if(uploaded.length){
+      uploadNote.style.display='block';
+      uploadNote.innerHTML = '<strong>'+uploaded.length+'</strong> file'+(uploaded.length>1?'s':'')+
+        ' selected. We\'ll list these in your brief — after you submit, we\'ll show you where to <strong>email the same files</strong> so we get the originals.';
+    } else { uploadNote.style.display='none'; }
+  }
+
+  function downloadAnswers(){
+    const form = document.getElementById('intake');
+    const data = {};
+    const fd = new FormData(form);
+    const skip = {access_key:1, subject:1, from_name:1, botcheck:1};
+    for (const [k,v] of fd.entries()){
+      if (v === '' || v === null || skip[k]) continue;
+      if (data[k]) data[k] = [].concat(data[k], v);
+      else data[k] = v;
+    }
+    let out = "THE NOW DESIGNS — CLIENT INTAKE & PROJECT BRIEF\n";
+    out += "Date: " + (document.getElementById('f_date').value || '') + "\n";
+    out += "=".repeat(52) + "\n\n";
+    for (const k in data){
+      const val = Array.isArray(data[k]) ? data[k].join(", ") : data[k];
+      out += k + ":\n  " + val + "\n\n";
+    }
+    if (uploaded.length){
+      out += "ATTACHED FILES (please attach these to your email):\n";
+      uploaded.forEach(function(f){ out += "  • " + f.name + " (" + fmtSize(f.size) + ")\n"; });
+      out += "\n";
+    }
+    const biz = (data['Business name']||'client').toString().replace(/[^a-z0-9]/gi,'-').toLowerCase();
+    const blob = new Blob([out], {type:'text/plain'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'intake-' + biz + '.txt';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  }
+</script>
+</body>
+</html>

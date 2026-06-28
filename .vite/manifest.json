@@ -1,0 +1,65 @@
+{
+  "_Cherry-a9czvRrY.js": {
+    "file": "assets/Cherry-a9czvRrY.js",
+    "name": "Cherry",
+    "imports": [
+      "_react-3rKQ6D0k.js",
+      "index.html",
+      "_three-Bv_yhDw6.js"
+    ]
+  },
+  "_react-3rKQ6D0k.js": {
+    "file": "assets/react-3rKQ6D0k.js",
+    "name": "react",
+    "isDynamicEntry": true
+  },
+  "_three-Bv_yhDw6.js": {
+    "file": "assets/three-Bv_yhDw6.js",
+    "name": "three",
+    "imports": [
+      "_react-3rKQ6D0k.js"
+    ]
+  },
+  "index.html": {
+    "file": "assets/app-PnpObxPp.js",
+    "name": "app",
+    "src": "index.html",
+    "isEntry": true,
+    "imports": [
+      "_react-3rKQ6D0k.js",
+      "_three-Bv_yhDw6.js"
+    ],
+    "dynamicImports": [
+      "_react-3rKQ6D0k.js",
+      "src/three/HeroCanvas.tsx",
+      "src/three/HeroAccentCanvas.tsx"
+    ],
+    "css": [
+      "assets/app-DKrgqDeN.css"
+    ]
+  },
+  "src/three/HeroAccentCanvas.tsx": {
+    "file": "assets/HeroAccentCanvas-DjgysaiG.js",
+    "name": "HeroAccentCanvas",
+    "src": "src/three/HeroAccentCanvas.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-3rKQ6D0k.js",
+      "_three-Bv_yhDw6.js",
+      "_Cherry-a9czvRrY.js",
+      "index.html"
+    ]
+  },
+  "src/three/HeroCanvas.tsx": {
+    "file": "assets/HeroCanvas-DF5xT2hn.js",
+    "name": "HeroCanvas",
+    "src": "src/three/HeroCanvas.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-3rKQ6D0k.js",
+      "_three-Bv_yhDw6.js",
+      "_Cherry-a9czvRrY.js",
+      "index.html"
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 {
-  "_Cherry-a9czvRrY.js": {
-    "file": "assets/Cherry-a9czvRrY.js",
+  "_Cherry-BBo1Wxat.js": {
+    "file": "assets/Cherry-BBo1Wxat.js",
     "name": "Cherry",
     "imports": [
       "_react-3rKQ6D0k.js",
@@ -21,7 +21,7 @@
     ]
   },
   "index.html": {
-    "file": "assets/app-PnpObxPp.js",
+    "file": "assets/app-Dj4OpF6x.js",
     "name": "app",
     "src": "index.html",
     "isEntry": true,
@@ -35,30 +35,30 @@
       "src/three/HeroAccentCanvas.tsx"
     ],
     "css": [
-      "assets/app-DKrgqDeN.css"
+      "assets/app-BqzjzBCe.css"
     ]
   },
   "src/three/HeroAccentCanvas.tsx": {
-    "file": "assets/HeroAccentCanvas-DjgysaiG.js",
+    "file": "assets/HeroAccentCanvas-GjBY7ijZ.js",
     "name": "HeroAccentCanvas",
     "src": "src/three/HeroAccentCanvas.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-3rKQ6D0k.js",
       "_three-Bv_yhDw6.js",
-      "_Cherry-a9czvRrY.js",
+      "_Cherry-BBo1Wxat.js",
       "index.html"
     ]
   },
   "src/three/HeroCanvas.tsx": {
-    "file": "assets/HeroCanvas-DF5xT2hn.js",
+    "file": "assets/HeroCanvas-9TeTOd6w.js",
     "name": "HeroCanvas",
     "src": "src/three/HeroCanvas.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_react-3rKQ6D0k.js",
       "_three-Bv_yhDw6.js",
-      "_Cherry-a9czvRrY.js",
+      "_Cherry-BBo1Wxat.js",
       "index.html"
     ]
   }

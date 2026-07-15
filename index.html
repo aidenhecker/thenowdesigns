@@ -5,26 +5,90 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>The Now Designs — AI-accelerated web studio</title>
 <meta name="description" content="AI-accelerated web studio. We design, build, and launch your whole website for you — live in weeks, owned outright by you. Neuro-informed design, hand-finished." />
+<link rel="canonical" href="https://thenowdesigns.com/" />
 <meta property="og:title" content="The Now Designs — AI-accelerated web studio" />
 <meta property="og:description" content="Your whole website, done for you. Designed, built, and launched — AI-accelerated, hand-finished, yours to keep." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://thenowdesigns.com/" />
 <meta property="og:image" content="https://thenowdesigns.com/img/og-card.png" />
+<meta property="og:image:alt" content="The Now Designs — AI-accelerated web studio" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@thenowdesigns" />
+<meta name="twitter:creator" content="@thenowdesigns" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600;1,9..144,900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600;1,9..144,900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600;1,9..144,900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600;1,9..144,900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"></noscript>
 <link rel="stylesheet" href="/styles.css">
   <noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://thenowdesigns.com/#website",
+      "url": "https://thenowdesigns.com/",
+      "name": "The Now Designs",
+      "description": "AI-accelerated web studio. We design, build, and launch your whole website for you — live in weeks, owned outright by you.",
+      "publisher": {"@id": "https://thenowdesigns.com/#organization"}
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://thenowdesigns.com/#organization",
+      "name": "The Now Designs",
+      "url": "https://thenowdesigns.com/",
+      "logo": {"@type": "ImageObject", "url": "https://thenowdesigns.com/img/logo-wordmark.png"},
+      "image": "https://thenowdesigns.com/img/og-card.png",
+      "description": "AI-accelerated web studio. We design, build, and launch your whole website for you — live in weeks, owned outright by you. Neuro-informed design, hand-finished.",
+      "email": "aiden@thenowdesigns.com",
+      "sameAs": ["https://www.instagram.com/thenowdesigns"],
+      "priceRange": "$$",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Web Design & Development Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Built & Maintained — Monthly Web Design",
+              "description": "Hand-built website with hosting, security, on-page SEO, and same-day support. Month-to-month, no lock-in."
+            },
+            "price": "99",
+            "priceCurrency": "USD",
+            "priceSpecification": {"@type": "UnitPriceSpecification", "price": "99", "priceCurrency": "USD", "unitCode": "MON"},
+            "url": "https://thenowdesigns.com/services/"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Full Custom Website — One-Time Build",
+              "description": "Fully custom design and hand-coded build. You own the code, domain, and data outright."
+            },
+            "price": "1999",
+            "priceCurrency": "USD",
+            "url": "https://thenowdesigns.com/services/"
+          }
+        ]
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body id="top" class="home">
+<a class="skip-link" href="#main">Skip to content</a>
 
 <nav class="nav" id="nav">
   <a href="/" class="brand" aria-label="The Now Designs">The N<span class="cherry-o" aria-hidden="true"></span>w Designs<span class="brand-dot live-dot" aria-hidden="true"></span></a>
   <div class="nav-links" id="navlinks">
     <a href="/services/">Services</a>
     <a href="/work/">Work</a>
+    <a href="/about/">About</a>
     <a href="/#pricing">Pricing</a>
     <a href="/#contact" class="btn btn--ink">Book</a>
   </div>
@@ -32,30 +96,49 @@
 </nav>
 
 <!-- 1 · HERO — paper canvas, cherry-drop video, text left / cherry right -->
-<header class="hero hero--split">
+<header class="hero hero--split" id="main" tabindex="-1">
   <div class="hero__inner hero__grid">
     <div class="hero__copy">
-      <span class="aco-pill" data-reveal><span class="live-dot" aria-hidden="true"></span> AI-accelerated web studio</span>
-      <h1 class="display" data-reveal data-d="1">Your whole website. <em>Done for&nbsp;you.</em></h1>
-      <p class="lead" data-reveal data-d="2">We design, build, and launch it for you — live in weeks, owned outright by you.</p>
-      <div class="hero__cta" data-reveal data-d="3">
+      <span class="aco-pill"><span class="live-dot" aria-hidden="true"></span> AI-accelerated web studio</span>
+      <h1 class="display">Your whole website. <em>Done for&nbsp;you.</em></h1>
+      <p class="lead">We design, build, and launch it for you — live in weeks, owned outright by you.</p>
+      <div class="hero__cta">
         <a href="/#contact" class="btn btn--cherry btn--lg">Book a free call <span class="arrow">→</span></a>
         <a href="/work/" class="hero__link">see the work <span class="arrow">→</span></a>
       </div>
     </div>
-    <figure class="hero__visual hero__media" data-reveal data-d="2">
+    <figure class="hero__visual hero__media">
       <div class="hero__frame hero__frame--video">
-        <img class="hero__video" src="/img/hero-cherry.jpg" alt="" aria-hidden="true">
+        <div class="cherry-stage" id="cherry-stage" aria-hidden="true">
+          <svg class="cherry-fallback" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+            <defs>
+              <radialGradient id="tnd-plate" cx="50%" cy="40%" r="72%">
+                <stop offset="0" stop-color="#F7F5EF"/><stop offset="100%" stop-color="#EFEDE6"/>
+              </radialGradient>
+              <radialGradient id="tnd-cherry" cx="36%" cy="32%" r="74%">
+                <stop offset="0" stop-color="#ffc2ad"/><stop offset="22%" stop-color="#f2654a"/>
+                <stop offset="60%" stop-color="#E1452E"/><stop offset="88%" stop-color="#C5391F"/>
+                <stop offset="100%" stop-color="#85220f"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="500" fill="url(#tnd-plate)"/>
+            <ellipse cx="200" cy="372" rx="96" ry="27" fill="#15140F" opacity="0.15"/>
+            <path d="M204 308 C 190 250 198 214 236 196" fill="none" stroke="#6f5a36" stroke-width="7" stroke-linecap="round"/>
+            <circle cx="200" cy="308" r="68" fill="url(#tnd-cherry)"/>
+            <ellipse cx="176" cy="282" rx="21" ry="13" fill="#fff" opacity="0.5"/>
+          </svg>
+        </div>
       </div>
     </figure>
   </div>
 </header>
 
 <!-- 2 · MARQUEE — ink band, cherry pips -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee__track">
-    <span>All done for you <i class="pip"></i> All done for you <i class="pip"></i> All done for you <i class="pip"></i> All done for you <i class="pip"></i> All done for you <i class="pip"></i> All done for you <i class="pip"></i> All done for you <i class="pip"></i> All done for you <i class="pip"></i> All done for you <i class="pip"></i> All done for you <i class="pip"></i> </span>
-    <span>All done for you <i class="pip"></i> All done for you <i class="pip"></i> All done for you <i class="pip"></i> All done for you <i class="pip"></i> All done for you <i class="pip"></i> All done for you <i class="pip"></i> All done for you <i class="pip"></i> All done for you <i class="pip"></i> All done for you <i class="pip"></i> All done for you <i class="pip"></i> </span>
+<div class="marquee" id="marquee">
+  <button class="marquee__pause" type="button" aria-pressed="false" aria-label="Pause the scrolling banner"><span class="marquee__pause-i" aria-hidden="true"></span></button>
+  <div class="marquee__track" aria-hidden="true">
+    <span>All done for you <i class="pip"></i> Hand-coded, never templated <i class="pip"></i> Live in weeks, not months <i class="pip"></i> You own the code forever <i class="pip"></i> Sub-second load times <i class="pip"></i> Built to rank from line one <i class="pip"></i> Six clients at a time, on purpose <i class="pip"></i> Call the person building it <i class="pip"></i> A cherry on top <i class="pip"></i> </span>
+    <span>All done for you <i class="pip"></i> Hand-coded, never templated <i class="pip"></i> Live in weeks, not months <i class="pip"></i> You own the code forever <i class="pip"></i> Sub-second load times <i class="pip"></i> Built to rank from line one <i class="pip"></i> Six clients at a time, on purpose <i class="pip"></i> Call the person building it <i class="pip"></i> A cherry on top <i class="pip"></i> </span>
   </div>
 </div>
 
@@ -63,7 +146,7 @@
 <section class="sec split" id="cherry">
   <div class="wrap split__grid">
     <figure class="split__media" data-reveal>
-      <div class="split__frame"><img src="/img/cherry-plate.jpg" alt="A single fresh cherry resting on a clean plate" loading="lazy"></div>
+      <div class="split__frame"><img src="/img/cherry-plate.jpg" alt="A single fresh cherry resting on a clean plate" loading="lazy" width="800" height="1000"></div>
     </figure>
     <div class="split__copy" data-reveal data-d="1">
       <span class="eyebrow">Why the cherry</span>
@@ -80,14 +163,13 @@
     <div class="sec-head" data-reveal>
       <span class="eyebrow">Our method · neuro-informed design</span>
       <h2 class="h-sec">We design for the brain — <em>before</em> the eye.</h2>
-      <p>Attention is decided in the first five seconds, below conscious thought. We engineer every page around how the brain actually reads, feels, and decides — then pressure-test it in our own R&amp;D lab.</p>
+      <p>Attention is decided in the first five seconds, below conscious thought. We engineer every page around how the brain actually reads, feels, and decides — then refine it against attention and conversion research before it ships.</p>
     </div>
     <div class="neuro__grid">
-      <div class="neuro__item" data-reveal data-d="1"><h3><span class="ic">⚡</span> The 5-second window</h3><p>The thalamus routes a page to the amygdala before your cortex names what it's looking at — you feel a site before you read it. We design the first frame for that fast emotional path.</p></div>
-      <div class="neuro__item" data-reveal data-d="2"><h3><span class="ic">◆</span> Anticipation, then payoff</h3><p>Dopamine fires twice — once anticipating, once on reward. We build pages as a build-and-release: tension, then the resolve that earns the click.</p></div>
-      <div class="neuro__item" data-reveal data-d="3"><h3><span class="ic">🧠</span> VRIBE — our in-silico lab</h3><p>VRIBE is our in-house brain-response model. We pressure-test creative against predicted cortical attention before it ships — so the work is informed by neuroscience, not guesswork.</p></div>
+      <div class="neuro__item" data-reveal data-d="1"><h3><span class="ic">⚡</span> The 5-second window</h3><p>The brain reads the emotional register of a page before the eyes finish their first pass. We design the first frame for that fast emotional path.</p></div>
+      <div class="neuro__item" data-reveal data-d="2"><h3><span class="ic">◆</span> Anticipation, then payoff</h3><p>We build pages with deliberate tension: a question the headline opens, then the resolution that earns the scroll.</p></div>
+      <div class="neuro__item" data-reveal data-d="3"><h3><span class="ic">◇</span> A review before it ships</h3><p>Before anything leaves our hands, we run every page through a structured design review built around cognitive science, conversion research, and attention principles. Visual hierarchy, emotional pacing, friction points, and the single most important action — checked against each other until the page earns the click.</p></div>
     </div>
-    <p class="neuro__note" data-reveal>Methodology and R&amp;D, not a per-visitor service or mind-reading. VRIBE is for non-commercial in-house research; we apply what it teaches, we don't sell its outputs.</p>
   </div>
 </section>
 
@@ -111,7 +193,7 @@
 <!-- 6 · WHY US — the single quiet blue panel, one line each -->
 <section class="sec sec--blue why why--lean" id="why">
   <div class="wrap">
-    <p class="why-quote" data-reveal>Few clients. Full attention. <em>Real results.</em></p>
+    <h2 class="why-quote" data-reveal>Few clients. Full attention. <em>Real results.</em></h2>
     <div class="why-grid">
       <div class="why-item" data-reveal data-d="1"><h3><span class="i">01</span> Text the person who builds it.</h3></div>
       <div class="why-item" data-reveal data-d="2"><h3><span class="i">02</span> Loads in under a second.</h3></div>
@@ -128,10 +210,10 @@
       <h2 class="h-sec">Live in <em>weeks</em>, not months.</h2>
     </div>
     <div class="steps steps--flow steps--roll">
-      <div class="step" data-reveal data-d="1"><div class="step__n">01</div><h4>Call</h4><p>A free, no-pitch chat about what you're building.</p></div>
-      <div class="step" data-reveal data-d="2"><div class="step__n">02</div><h4>Design</h4><p>Real screens in your brand — shaped with you.</p></div>
-      <div class="step" data-reveal data-d="3"><div class="step__n">03</div><h4>Build</h4><p>Hand-coded, fast, and SEO-ready.</p></div>
-      <div class="step" data-reveal data-d="4"><div class="step__n">04</div><h4>Launch</h4><p>We ship it and hand you the keys.</p></div>
+      <div class="step" data-reveal data-d="1"><div class="step__n">01</div><h3>Call</h3><p>A free, no-pitch chat about what you're building.</p></div>
+      <div class="step" data-reveal data-d="2"><div class="step__n">02</div><h3>Design</h3><p>Real screens in your brand — shaped with you.</p></div>
+      <div class="step" data-reveal data-d="3"><div class="step__n">03</div><h3>Build</h3><p>Hand-coded, fast, and SEO-ready.</p></div>
+      <div class="step" data-reveal data-d="4"><div class="step__n">04</div><h3>Launch</h3><p>We ship it and hand you the keys.</p></div>
     </div>
   </div>
 </section>
@@ -165,7 +247,7 @@
 <!-- 10 · PRICING -->
 <section class="sec sec--cream" id="pricing">
   <div class="wrap">
-    <div class="sec-head" data-reveal><span class="eyebrow">What it costs</span><h2 class="h-sec">Real numbers. <em>No games.</em></h2><p>Most studios hide prices — that's the overhead talking. Pay monthly, or own it outright.</p></div>
+    <div class="sec-head" data-reveal><span class="eyebrow">What it costs</span><h2 class="h-sec">Real numbers. <em>No games.</em></h2><p>Most studios hide prices — that's the overhead talking. A typical agency charges $10,000–$50,000 for a custom site, and you pay for account managers and approval decks. We charge for the thing that ships. Pay monthly, or own it outright.</p></div>
     <div class="tiers">
       <div class="tier" data-reveal data-d="1">
         <div class="tier__name">Built &amp; Maintained</div><div class="tier__price">$99 <em>/mo</em></div><div class="tier__hosting">+ $900 to start</div>
@@ -175,7 +257,8 @@
       <div class="tier tier--feat" data-reveal data-d="2">
         <span class="tier__badge">Own it outright</span><div class="tier__name">Full Custom</div><div class="tier__price">$1,999 <em>one-time</em></div><div class="tier__hosting">+ $50 / month hosting</div>
         <ul><li>Fully custom, unlimited pages</li><li>You own code, domain &amp; data</li><li>Custom features</li><li>Cloudflare-secured</li><li>Direct line to your designer</li></ul>
-        <a href="https://whop.com/checkout/plan_zgsUfDgpzpj8b" target="_blank" rel="noopener" class="btn btn--ghost">Buy now</a>
+        <a href="/#contact" class="btn btn--ghost">Book a call first <span class="arrow">→</span></a>
+        <a href="https://whop.com/checkout/plan_zgsUfDgpzpj8b" target="_blank" rel="noopener" class="tier__skip">Already decided? Skip to checkout →</a>
       </div>
     </div>
 
@@ -190,7 +273,18 @@
     </div>
 
     <div class="proof" data-reveal>
-      <p class="proof__avail"><span class="live-dot" aria-hidden="true"></span> Booking a limited number of builds this month.</p>
+      <p class="proof__avail"><span class="live-dot" aria-hidden="true"></span> Taking on 2 new custom builds this month. One spot is open.</p>
+      <div class="proof__badges">
+        <span class="proof__badge">4–6 week delivery</span>
+        <span class="proof__badge">Same-day replies</span>
+        <span class="proof__badge">You own the code, domain &amp; data</span>
+        <span class="proof__badge">Month-to-month, no lock-in</span>
+        <span class="proof__badge">Direct line to the person building it</span>
+      </div>
+      <div class="proof__bridge">
+        <p class="proof__bridge-q">First projects are shipping now. <em>Ours aren't reviews yet — they're in build.</em></p>
+        <p class="proof__bridge-sub">If you want to be the project we talk about on this page, the window is narrow. We take on six clients at a time — on purpose.</p>
+      </div>
     </div>
 
     <!-- ============================================================
@@ -242,7 +336,7 @@
 <footer class="footer">
   <div class="wrap">
     <div class="footer__top">
-      <div><a href="/" class="footer-brand"><img class="footer-logo" src="/img/logo-wordmark.png" alt="The Now Designs"></a><p class="footer__big" style="margin-top:24px">Your website, <em>all done for you.</em></p></div>
+      <div><a href="/" class="footer-brand"><img class="footer-logo" src="/img/logo-wordmark.png" alt="The Now Designs" width="153" height="46"></a><p class="footer__big" style="margin-top:24px">Your website, <em>all done for you.</em></p></div>
       <div class="footer__links"><a href="/services/">Services</a><a href="/about/">About</a><a href="/work/">Work</a><a href="/#pricing">Pricing</a><a href="/#contact">Book</a></div>
     </div>
     <div class="footer__bot">
@@ -254,5 +348,6 @@
 </footer>
 
 <script src="/script.js"></script>
+<script src="/js/cherry-hero.js" defer></script>
 </body>
 </html>

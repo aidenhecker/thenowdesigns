@@ -6,9 +6,22 @@
   }
   var t = document.getElementById('toggle'), l = document.getElementById('navlinks');
   if (t && l) {
-    t.addEventListener('click', function(){ t.classList.toggle('open'); l.classList.toggle('open'); });
+    t.setAttribute('aria-controls', 'navlinks');
+    t.setAttribute('aria-expanded', 'false');
+    var setMenu = function(open){ t.classList.toggle('open', open); l.classList.toggle('open', open); t.setAttribute('aria-expanded', String(open)); };
+    t.addEventListener('click', function(){ setMenu(!t.classList.contains('open')); });
     l.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){ t.classList.remove('open'); l.classList.remove('open'); });
+      a.addEventListener('click', function(){ setMenu(false); });
+    });
+  }
+
+  // marquee pause control (WCAG 2.2.2 — keyboard/touch operable)
+  var mq = document.getElementById('marquee'), mqp = mq && mq.querySelector('.marquee__pause');
+  if (mq && mqp) {
+    mqp.addEventListener('click', function(){
+      var paused = mq.classList.toggle('is-paused');
+      mqp.setAttribute('aria-pressed', String(paused));
+      mqp.setAttribute('aria-label', paused ? 'Resume the scrolling banner' : 'Pause the scrolling banner');
     });
   }
   var io = new IntersectionObserver(function(es){

@@ -9,41 +9,22 @@ export default function Layout() {
 
   // Scroll behaviour on navigation: native scroll only — hash target else top.
   useEffect(() => {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (hash) {
       const el = document.querySelector(hash)
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth' })
+        el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' })
         return
       }
     }
     window.scrollTo({ top: 0 })
   }, [pathname, hash])
 
-  // Scroll-reveal + kinetic headings (ports the IntersectionObserver). Per route.
-  useEffect(() => {
-    const els = Array.from(
-      document.querySelectorAll('[data-reveal]:not(.in),[data-kinetic]:not(.in)'),
-    )
-    if (!els.length) return
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add('in')
-            io.unobserve(e.target)
-          }
-        })
-      },
-      { threshold: 0.14 },
-    )
-    els.forEach((el) => io.observe(el))
-    return () => io.disconnect()
-  }, [pathname])
-
   return (
     <>
+      <a className="skip" href="#main">Skip to content</a>
       <Nav />
-      <main>
+      <main id="main">
         <Outlet />
       </main>
       <Footer />

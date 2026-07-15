@@ -1,22 +1,27 @@
-import KineticHeading, { type Seg } from './KineticHeading'
+import type { ReactNode } from 'react'
+import CherryStop from './CherryStop'
 
-// Shared subpage hero. Static by design — no 3D accent.
+// Shared subpage hero: quiet blue field, plain semantic heading, and the
+// brand's one gesture — the cherry full stop closing the H1.
 export default function PageHero({
   eyebrow,
-  heading,
+  children,
   lead,
 }: {
   eyebrow: string
-  heading: Seg[]
+  children: ReactNode // h1 content (may include <em>)
   lead: string
 }) {
   return (
-    <header className="page-hero">
+    <section className="page-hero">
       <div className="wrap">
-        <span className="eyebrow" data-reveal>{eyebrow}</span>
-        <KineticHeading as="h1" segments={heading} />
-        <p className="lead" data-reveal data-d="2">{lead}</p>
+        <span className="eyebrow">{eyebrow}</span>
+        <h1>
+          {children}
+          <CherryStop />
+        </h1>
+        <p className="lead">{lead}</p>
       </div>
-    </header>
+    </section>
   )
 }

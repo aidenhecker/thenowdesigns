@@ -1,22 +1,23 @@
 import { useState } from 'react'
 
-// Tap-to-pick options reduce mobile friction vs. an open text field.
+// Tap-to-pick options reduce mobile friction vs. an open text field. Real
+// radio inputs (not JS-fed hidden fields) so the form works without JS —
+// the field name matches what Web3Forms already receives.
 const NEEDS = ['Brand New Site', 'Redesign Existing Site', 'E-Commerce', 'Just Exploring']
 
-// Web3Forms AJAX submit with inline status — ports script.js form logic.
+// Web3Forms AJAX submit with inline status.
 export default function ContactForm() {
   const [sending, setSending] = useState(false)
-  const [need, setNeed] = useState('')
   const [status, setStatus] = useState<{ msg: string; cls: '' | 'ok' | 'err' }>({ msg: '', cls: '' })
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     if (sending) return
-    if (!need) {
+    const form = e.currentTarget
+    if (!(new FormData(form).get('What do you need'))) {
       setStatus({ msg: 'Pick what you need so we can point you right.', cls: 'err' })
       return
     }
-    const form = e.currentTarget
     setSending(true)
     setStatus({ msg: '', cls: '' })
     try {
@@ -28,7 +29,6 @@ export default function ContactForm() {
       const j = await r.json()
       if (j.success) {
         form.reset()
-        setNeed('')
         setStatus({ msg: "Thanks — we'll reply today 🍒", cls: 'ok' })
       } else {
         setStatus({ msg: 'Hmm, that didn’t send. Email us at aiden@thenowdesigns.com', cls: 'err' })
@@ -49,37 +49,38 @@ export default function ContactForm() {
       <div className="form-row">
         <div className="field">
           <label htmlFor="f-first">First name</label>
-          <input id="f-first" type="text" name="First name" required />
+          <input id="f-first" type="text" name="First name" autoComplete="given-name" required />
         </div>
         <div className="field">
           <label htmlFor="f-last">Last name</label>
-          <input id="f-last" type="text" name="Last name" required />
+          <input id="f-last" type="text" name="Last name" autoComplete="family-name" required />
         </div>
       </div>
       <div className="field">
         <label htmlFor="f-email">Email</label>
-        <input id="f-email" type="email" name="email" required />
+        <input id="f-email" type="email" name="email" autoComplete="email" required />
       </div>
       <div className="field">
-        <label id="need-label">What do you need?</label>
-        <div className="pills" role="group" aria-labelledby="need-label">
-          {NEEDS.map((n) => (
-            <button
-              type="button"
-              key={n}
-              className={'pill' + (need === n ? ' is-active' : '')}
-              aria-pressed={need === n}
-              onClick={() => {
-                setNeed(n)
-                if (status.cls === 'err') setStatus({ msg: '', cls: '' })
-              }}
-            >
-              {n}
-            </button>
-          ))}
-        </div>
-        {/* carries the pick through to Web3Forms */}
-        <input type="hidden" name="What do you need" value={need} />
+        <fieldset>
+          <legend>What do you need?</legend>
+          <div className="pills">
+            {NEEDS.map((n, i) => {
+              const id = 'need-' + i
+              return (
+                <span key={n}>
+                  <input
+                    type="radio"
+                    id={id}
+                    name="What do you need"
+                    value={n}
+                    onChange={() => { if (status.cls === 'err') setStatus({ msg: '', cls: '' }) }}
+                  />
+                  <label htmlFor={id}>{n}</label>
+                </span>
+              )
+            })}
+          </div>
+        </fieldset>
       </div>
       <div className="field">
         <label htmlFor="f-msg">Tell us more</label>

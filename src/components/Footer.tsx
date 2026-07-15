@@ -15,12 +15,12 @@ export default function Footer() {
               Your website, <em>all done for you.</em>
             </p>
           </div>
-          <div className="footer__links">
-            <Link to="/services/">Services</Link>
-            <Link to="/about/">About</Link>
-            <Link to="/work/">Work</Link>
-            <HashLink to="/#contact">Book</HashLink>
-          </div>
+          <ul className="footer__links">
+            <li><Link to="/services/">Services</Link></li>
+            <li><Link to="/about/">About</Link></li>
+            <li><Link to="/work/">Work</Link></li>
+            <li><HashLink to="/#contact">Book a free call</HashLink></li>
+          </ul>
         </div>
         <a
           className="footer__speed"
@@ -44,7 +44,9 @@ export default function Footer() {
               Instagram
             </a>
           </span>
-          <a href="mailto:aiden@thenowdesigns.com">aiden@thenowdesigns.com</a>
+          <address>
+            <a href="mailto:aiden@thenowdesigns.com">aiden@thenowdesigns.com</a>
+          </address>
         </div>
       </div>
     </footer>

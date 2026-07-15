@@ -32,7 +32,7 @@ export default function CookieBanner() {
     <div className={'cookie-banner' + (show ? ' show' : '')}>
       <p>
         We use only essential cookies to make this site work, plus minimal third-party services
-        (checkout &amp; fonts). See our <a href="/cookies/">Cookie Policy</a>.
+        (payments &amp; the contact form). See our <a href="/cookies/">Cookie Policy</a>.
       </p>
       <div className="cookie-actions">
         <button className="decline" type="button" onClick={() => close('declined')}>

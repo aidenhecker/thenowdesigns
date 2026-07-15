@@ -4,11 +4,7 @@ import type { MouseEvent, ReactNode } from 'react'
 // Same-page hash links don't update history (no rerender = no scroll) when
 // you're already on the target route, so vanilla <Link to="/#contact"> from /
 // looks "broken." This handles the scroll itself: if already on the target
-// pathname, scroll to the hash (via Lenis if running); otherwise navigate.
-type LenisLike = { scrollTo: (t: Element | number | string, o?: object) => void }
-const getLenis = (): LenisLike | undefined =>
-  (typeof window !== 'undefined' && (window as unknown as { __lenis?: LenisLike }).__lenis) || undefined
-
+// pathname, scroll to the hash; otherwise navigate.
 export default function HashLink({
   to,
   className,
@@ -40,9 +36,7 @@ export default function HashLink({
     if (samePath && hash) {
       const el = document.querySelector(hash)
       if (el) {
-        const lenis = getLenis()
-        if (lenis) lenis.scrollTo(el, { offset: -80 })
-        else el.scrollIntoView({ behavior: 'smooth' })
+        el.scrollIntoView({ behavior: 'smooth' })
         // keep the URL in sync (no history thrash)
         if (window.location.hash !== hash) history.replaceState(null, '', targetPath + hash)
         return

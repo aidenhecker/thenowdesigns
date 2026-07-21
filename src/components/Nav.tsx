@@ -31,6 +31,7 @@ export default function Nav() {
         <span className="brand-dot live-dot" aria-hidden="true"></span>
       </Link>
       <div className={'nav-links' + (open ? ' open' : '')} id="navlinks">
+        <Link to="/scan/" className={active('/scan')} onClick={close}>Free Scan</Link>
         <Link to="/services/" className={active('/services')} onClick={close}>Services</Link>
         <Link to="/work/" className={active('/work')} onClick={close}>Work</Link>
         <Link to="/about/" className={active('/about')} onClick={close}>About</Link>

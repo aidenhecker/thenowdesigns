@@ -1,10 +1,11 @@
-import { Fragment } from 'react'
+import { Fragment, type CSSProperties } from 'react'
 
 // "Maximize the impact of each letter" — splits a heading into per-letter spans
 // that reveal with a staggered transition. Dependency-free; driven by the same
 // IntersectionObserver `.in` mechanism as the rest of the site, and fully inert
 // under prefers-reduced-motion (see app.css). Words stay intact (no mid-word wrap).
 export type Seg = { text: string; em?: boolean }
+type HeadingTag = 'h1' | 'h2' | 'h3'
 
 export default function KineticHeading({
   segments,
@@ -12,7 +13,7 @@ export default function KineticHeading({
   className,
 }: {
   segments: Seg[]
-  as?: keyof JSX.IntrinsicElements
+  as?: HeadingTag
   className?: string
 }) {
   let idx = 0
@@ -32,7 +33,7 @@ export default function KineticHeading({
                   {[...tok].map((ch, ci) => {
                     const i = idx++
                     return (
-                      <span key={ci} className="kl" style={{ ['--i' as string]: i } as React.CSSProperties}>
+                      <span key={ci} className="kl" style={{ ['--i' as string]: i } as CSSProperties}>
                         {ch}
                       </span>
                     )

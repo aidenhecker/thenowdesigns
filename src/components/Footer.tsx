@@ -16,6 +16,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="footer__links">
+            <Link to="/scan/">Free Scan</Link>
             <Link to="/services/">Services</Link>
             <Link to="/about/">About</Link>
             <Link to="/work/">Work</Link>

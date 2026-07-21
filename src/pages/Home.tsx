@@ -55,9 +55,9 @@ export default function Home() {
               unforgettable one — live in weeks, yours to keep.
             </p>
             <div className="hero__cta" data-reveal data-d="3">
-              <HashLink to="/#contact" className="btn btn--cherry btn--lg">
-                Get a free teardown <span className="arrow">→</span>
-              </HashLink>
+              <Link to="/scan/" className="btn btn--cherry btn--lg">
+                Scan my website free <span className="arrow">→</span>
+              </Link>
               <Link to="/work/" className="hero__link">
                 see the work <span className="arrow">→</span>
               </Link>
@@ -250,9 +250,9 @@ export default function Home() {
               Start with a <em>free 5-minute teardown</em> of your current site. No pitch — just a
               diagnostic. Not a fit? We'll tell you who to call instead.
             </p>
-            <HashLink to="/#contact" className="btn btn--cherry btn--lg">
-              Get my teardown <span className="arrow">→</span>
-            </HashLink>
+            <Link to="/scan/" className="btn btn--cherry btn--lg">
+              Scan my website <span className="arrow">→</span>
+            </Link>
           </div>
         </div>
       </section>

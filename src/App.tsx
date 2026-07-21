@@ -4,8 +4,9 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
 import Work from './pages/Work'
+import Scan from './pages/Scan'
 
-// Route table consumed by vite-react-ssg. Prerenders to /, /about/, /services/, /work/.
+// Route table consumed by vite-react-ssg. Every public route is prerendered to real HTML.
 export const routes: RouteRecord[] = [
   {
     path: '/',
@@ -15,6 +16,7 @@ export const routes: RouteRecord[] = [
       { path: 'about', element: <About /> },
       { path: 'services', element: <Services /> },
       { path: 'work', element: <Work /> },
+      { path: 'scan', element: <Scan /> },
     ],
   },
 ]
